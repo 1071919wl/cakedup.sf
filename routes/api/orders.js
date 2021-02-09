@@ -41,4 +41,79 @@ router.post("/",
     }
 )
 
+
+
+router.patch("/:id", passport.authenticate('jwt',{session:false}), async (req, res) => {
+    try {
+        let order = await Order.findById(req.params.id)
+
+        // if(req.user.id ===  `${order.user._id}`){
+        
+            if (req.body.name) {
+                order.name = req.body.name
+            }
+            
+            if (req.body.phone) {
+                order.phone = req.body.phone
+            }
+
+            if (req.body.date) {
+                order.date = req.body.date
+            }
+
+            await order.save()
+            res.send(order)
+        // }else {
+        // res.status(404).json({
+        //     error: 'Incorrect user'
+        // })
+
+        // }
+	} catch(err) {
+       
+        res.status(404).json({
+            error: "Order doesn't exist!"
+        })
+    }
+    
+})
+
+
+router.delete("/:id", passport.authenticate('jwt',{session:false}), async (req, res) => {
+
+    const order = await Order.findOne({ _id: req.params.id })
+
+    if(order) {
+        // if (`${question.user}` === req.user.id){
+
+            Order.findByIdAndDelete(req.params.id)
+            // .then(  async () => {
+
+            //     let users = []; 
+
+            //     users.push(order.user)
+
+            //     order.responses.forEach(response => {
+            //         users.push(response.user)
+            //     })
+
+            //     users.forEach(async user => {
+            //         let questionUser = await User.findById(user._id)
+            //         let questionIdx = questionUser.questions.indexOf(question._id)
+            //         questionUser.questions.splice(questionIdx, 1)
+            //         await questionUser.save()
+            //     } )
+
+            // }
+            // )
+            .then(() => res.json(order))
+            .catch(err => res.status(404).json(err))
+        // } else{
+        //     res.status(404).json({error: 'Incorrect user'})
+        // }
+    } else {
+        res.json("question not found")
+    }
+})
+
 module.exports = router;
