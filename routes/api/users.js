@@ -33,7 +33,7 @@ router.post('/register', (req, res) => {
             //TESTING in POSTMAN - remove
                 // newUser.save().then(user => res.send(user)).catch(err => res.send(err));
             //TESTING in POSTMAN - remove
-            bcrypt.genSalt(10, (err, salt)  => {
+        bcrypt.genSalt(10, (err, salt)  => {
                 bcrypt.hash(newUser.password, salt, (err, hash) => {
                     if(err) throw err;
                     newUser.password = hash;
