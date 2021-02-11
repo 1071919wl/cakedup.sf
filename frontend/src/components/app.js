@@ -7,7 +7,7 @@ import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import OrderFormContainer from './order/order_container';
 import ScrollToTop from './ScrollToTop.js';
-
+import '../assets/stylesheets/reset.css';
 
 const App = () => (
   <div>

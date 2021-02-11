@@ -8,11 +8,12 @@ const OrdersReducer = (state={}, action) =>  {
 
     switch (action.type) {
         case RECEIVE_ORDERS:
-            let orderState = {}
-            Object.values(action.orders).forEach(order => {
-                orderState[order._id] = order
-            })
-            return orderState
+            // let orderState = {};
+            // Object.values(action.orders).forEach(order => {
+            //     orderState[order._id] = order
+            // })
+            // return orderState
+            return action.orders;
         case RECEIVE_ORDER:
             newState[action.order._id] = action.order
             return newState

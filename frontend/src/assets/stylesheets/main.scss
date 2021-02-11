@@ -1,0 +1,26 @@
+.main_container{
+
+    .main-bg-sec1{
+        // background-image: url("../images/main/temp.jpg");
+
+        .main-bg-img{
+            height:auto;
+            // max-width: 100%;
+            width: 80;
+        }
+    }
+
+    .footer_container{
+        // background-color: #272521b3
+        background-color: #7c7567b3;
+        padding: 20px;
+    
+        .copyRight{
+            color: white;
+            display: flex;
+        }
+    
+    }
+
+}
+

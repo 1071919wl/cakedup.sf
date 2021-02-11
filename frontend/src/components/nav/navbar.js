@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from 'react-router-dom'
+import '../../assets/stylesheets/navbar.scss';
+import cakedupLogo from '../../assets/images/cakedup.jpg';
 
 const NavBar = (props) => {
 
@@ -32,16 +34,15 @@ const NavBar = (props) => {
     
         <div className='navbar-container'>
             <div className='nav-header-bar'>
-                <div className='left-navbar'>
 
-                    
-                    {/* <Link to='/'><img alt="" src={dino2} className='brand-icon'/></Link> */}
-                    {/* <div className='brand-navbar'>{tbdevelopedHeader()}</div> */}
-
-
+                <div className='left-navbar'>    
+                    <Link to='/'><img alt="" src={cakedupLogo} className='brand-icon'/></Link>
+                    {/* <div className='brand-navbar'>Cakedup.sf</div> */}
                 </div>
 
-                <div>{getLinks()}</div>
+                <div>
+                    {getLinks()}
+                </div>
             </div>
         </div>
         
