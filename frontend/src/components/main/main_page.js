@@ -16,7 +16,7 @@ class MainPage extends React.Component {
                 
                 <div className='title_container'>
                     <h1 className='cake_type'>- BASQUE CHEESECAKES -</h1>
-                    <h1 className='brand-name'>Cakedup.Sf</h1>
+                    <h1 className='brand-name'>Cakedup.sf</h1>
                 </div>
 
                 <div className ='about_gurl_container' >

@@ -1,3 +1,19 @@
+/* CSS-Only Parallax Effect
+https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
+
+
+
+/* .Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.Site-content {
+    flex: 1;
+} */
+
+
 .title_container{
     background-color:#e5e5e5;
     padding-top:15px;
@@ -20,6 +36,7 @@
     overflow:auto;
 
     padding-top: 40px;
+    padding-bottom: 40px;
     margin: auto 2em;
      /* position: absolute; */
      /* transform: translateX(-50%); */
@@ -27,6 +44,8 @@
      display:flex;
      align-items: center;
      justify-content: center;
+
+     background-color: pink;
 }
 
 /* * {
@@ -35,8 +54,10 @@
 
 .gurl_container {
     float: left;
-    width: 20%;
+    width: 28%;
     text-align: center;
+
+    margin-right: 50px;
 }
 
 /* .menu a {
