@@ -1,0 +1,83 @@
+.title_container{
+    background-color:#e5e5e5;
+    padding-top:15px;
+    padding-bottom:15px;
+    text-align:center;
+}
+
+.cake_type{
+    /* font-size: 1.5vw;    */
+    font-size: 18px;
+}
+
+.brand-name {
+    font-size: 6vw;
+}
+
+.testing{
+    overflow:auto;
+}
+
+/* * {
+    box-sizing: border-box;
+} */
+
+.menu {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.menu a {
+    background-color: #e5e5e5;
+    padding: 8px;
+    margin-top: 7px;
+    display: block;
+    width: 100%;
+    color: black;
+}
+
+
+
+.about_gurl_info {
+    float: left;
+    width: 30%;
+    /* padding: 0 20px; */
+    background-color: yellow;
+
+}
+
+.right {
+    background-color: #e5e5e5;
+    float: left;
+    width: 20%;
+    /* padding: 15px; */
+    margin-top: 7px;
+    text-align: center;
+}
+
+.header{
+    background-color:#e5e5e5;
+    padding:15px;
+    text-align:center;
+}
+
+.copyRight{
+    background-color:#e5e5e5;
+    text-align:center;
+    padding:10px;
+    margin-top:7px;
+}
+
+
+@media only screen and (max-width:620px) {
+
+    /* For mobile phones: */
+    .right,
+    .title_container,
+    .about_gurl_info,
+    .menu
+    {
+        width: 100%;
+    }
+}
