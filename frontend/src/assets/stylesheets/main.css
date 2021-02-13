@@ -11,7 +11,7 @@
 }
 
 .brand-name {
-    font-size: 6vw;
+    font-size: 5.5vw;
 }
 
 
@@ -21,7 +21,12 @@
 
     padding-top: 40px;
     margin: auto 2em;
-    /* display: inline-block */
+     /* position: absolute; */
+     /* transform: translateX(-50%); */
+
+     display:flex;
+     align-items: center;
+     justify-content: center;
 }
 
 /* * {
@@ -51,6 +56,7 @@
     /* padding: 0 20px; */
     background-color: yellow;
     text-align: center;
+
 
 }
 
@@ -83,6 +89,10 @@
     text-align: center;
 }
 
+.mobile-gurl-name {
+    display: none;
+    text-align: center;
+}
 
 
 @media only screen and (max-width:620px) {
@@ -94,5 +104,21 @@
     .gurl_container
     {
         width: 100%;
+    }
+
+    .about_gurl_name{
+        display: none;
+    }
+
+    .mobile-gurl-name {
+        display:block;
+    }
+
+    .brand-name{
+        font-size: 58px;
+    }
+
+    .about_gurl_container{
+        display: block;
     }
 }

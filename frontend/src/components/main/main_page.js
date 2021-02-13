@@ -22,6 +22,10 @@ class MainPage extends React.Component {
                 <div className ='about_gurl_container' >
 
 
+                        <div className="mobile-gurl-name"> 
+                            <h1>Alice Hu</h1>
+                        </div>
+
                     <div className='gurl_container'>
                         <img alt="" src={gurl} className='main-gurl-img'/>
                     </div>
