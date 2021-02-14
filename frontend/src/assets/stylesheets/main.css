@@ -3,15 +3,10 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 
 
-/* .Site {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
 
-.Site-content {
-    flex: 1;
-} */
+
+
+/*! ========================== mobile section */
 
 
 .title_container{
@@ -19,7 +14,11 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     padding-top:15px;
     padding-bottom:15px;
     text-align:center;
+
+
 }
+
+
 
 .cake_type{
     /* font-size: 1.5vw;    */
@@ -37,7 +36,8 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
     padding-top: 40px;
     padding-bottom: 40px;
-    margin: auto 2em;
+    /* margin: auto 2em; */
+    
      /* position: absolute; */
      /* transform: translateX(-50%); */
 
@@ -46,7 +46,9 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
      justify-content: center;
 
      background-color: pink;
+       
 }
+
 
 /* * {
     box-sizing: border-box;
@@ -79,7 +81,9 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     text-align: center;
 
 
+
 }
+
 
 
 .main-gurl-img{
@@ -87,11 +91,6 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     height: auto; */
 }
 
-.header{
-    background-color:#e5e5e5;
-    padding:15px;
-    text-align:center;
-}
 
 .copyRight{
     background-color:#e5e5e5;
