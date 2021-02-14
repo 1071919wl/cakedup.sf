@@ -1,0 +1,27 @@
+.navbar-container{
+    background-color: black;
+    // opacity: 0.5;
+    padding: 10px;
+
+
+    .nav-header-bar{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        .left-navbar{
+
+            .brand-icon{
+                border-radius: 50%;
+                height: auto;
+                width: 115px;
+            }
+        }
+
+        .logoutButton{
+            color:white;
+        }
+    }
+
+}

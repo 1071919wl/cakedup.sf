@@ -1,0 +1,144 @@
+/* CSS-Only Parallax Effect
+https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
+
+
+
+
+
+
+/*! ========================== mobile section */
+
+
+.title_container{
+    background-color:#e5e5e5;
+    padding-top:15px;
+    padding-bottom:15px;
+    text-align:center;
+
+
+}
+
+
+
+.cake_type{
+    /* font-size: 1.5vw;    */
+    font-size: 18px;
+}
+
+.brand-name {
+    font-size: 5.5vw;
+}
+
+
+
+.about_gurl_container {
+    overflow:auto;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /* margin: auto 2em; */
+    
+     /* position: absolute; */
+     /* transform: translateX(-50%); */
+
+     display:flex;
+     align-items: center;
+     justify-content: center;
+
+     background-color: pink;
+       
+}
+
+
+/* * {
+    box-sizing: border-box;
+} */
+
+.gurl_container {
+    float: left;
+    width: 28%;
+    text-align: center;
+
+    margin-right: 50px;
+}
+
+/* .menu a {
+    background-color: #e5e5e5;
+    padding: 8px;
+    margin-top: 7px;
+    display: block;
+    width: 100%;
+    color: black;
+} */
+
+
+
+.about_gurl_info {
+    float: left;
+    width: 30%;
+    /* padding: 0 20px; */
+    background-color: yellow;
+    text-align: center;
+
+
+
+}
+
+
+
+.main-gurl-img{
+    /* min-width: 300px;
+    height: auto; */
+}
+
+
+.copyRight{
+    background-color:#e5e5e5;
+    text-align:center;
+    padding:10px;
+    margin-top:7px;
+}
+
+
+.about {
+    background-color: #e5e5e5;
+    float: left;
+    width: 20%;
+    /* padding: 15px; */
+    margin-top: 7px;
+    text-align: center;
+}
+
+.mobile-gurl-name {
+    display: none;
+    text-align: center;
+}
+
+
+@media only screen and (max-width:620px) {
+
+    /* For mobile phones: */
+    .about,
+    .title_container,
+    .about_gurl_info,
+    .gurl_container
+    {
+        width: 100%;
+    }
+
+    .about_gurl_name{
+        display: none;
+    }
+
+    .mobile-gurl-name {
+        display:block;
+    }
+
+    .brand-name{
+        font-size: 58px;
+    }
+
+    .about_gurl_container{
+        display: block;
+    }
+}
