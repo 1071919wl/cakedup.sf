@@ -4,18 +4,19 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 
 
-
+.parallax_container{
+    z-index: -1;
+}
 
 /*! ========================== mobile section */
 
 
 .title_container{
-    background-color:#e5e5e5;
+    /* background-color:#e5e5e5; */
     padding-top:15px;
     padding-bottom:15px;
     text-align:center;
-
-
+    transform: translate(0%, 40%);
 }
 
 
@@ -34,8 +35,8 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 .about_gurl_container {
     overflow:auto;
 
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     /* margin: auto 2em; */
     
      /* position: absolute; */
@@ -45,7 +46,9 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
      align-items: center;
      justify-content: center;
 
-     background-color: pink;
+     background-color: white;
+    /* box-shadow: 0 0 50px #333; */
+    box-shadow: 0 0 20px #333;
        
 }
 
