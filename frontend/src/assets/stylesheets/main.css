@@ -2,9 +2,29 @@
 https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 
+/*! test */
 
 
+.parallax_bg {
+    /* margin-left: 650px;
+    margin-bottom: -500px;
+    margin-top: 200px; */
+}
 
+
+.main-bg-sec1 {
+    /* margin-left: 650px;
+    margin-bottom: -500px;
+    margin-top: 200px; */
+    background-color: yellowgreen;
+
+
+}
+
+.main-bg-img{
+    
+}
+/*! test */
 
 /*! ========================== mobile section */
 
@@ -15,7 +35,6 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     padding-bottom:15px;
     text-align:center;
 
-
 }
 
 
@@ -23,10 +42,21 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 .cake_type{
     /* font-size: 1.5vw;    */
     font-size: 18px;
+
+    /*! test */
+    z-index: 100;
+    position: relative;
+    /*! test */
 }
 
 .brand-name {
     font-size: 5.5vw;
+
+    /*! test */
+    z-index: 100;
+    position: relative;
+    /*! test */
+
 }
 
 
@@ -35,7 +65,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     overflow:auto;
 
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 400px;
     /* margin: auto 2em; */
     
      /* position: absolute; */
@@ -47,6 +77,11 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
      background-color: pink;
        
+    /*! test */
+    z-index: 100;
+    position: relative;
+    /*! test */
+     
 }
 
 
