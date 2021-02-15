@@ -4,6 +4,8 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 
 
+
+
 .parallax_container{
     z-index: -1;
 }
@@ -23,11 +25,15 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 .cake_type{
     /* font-size: 1.5vw;    */
-    font-size: 18px;
+    font-size: 25px;
+    color:white;
+
 }
 
 .brand-name {
-    font-size: 5.5vw;
+    color: white;
+    font-size: 6.7vw;
+    font-family: 'Allura', cursive;
 }
 
 
