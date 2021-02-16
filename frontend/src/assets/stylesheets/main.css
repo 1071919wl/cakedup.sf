@@ -4,11 +4,11 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 
 
-
-
 .parallax_container{
     z-index: -1;
+
 }
+
 
 /*! ========================== mobile section */
 
@@ -25,14 +25,15 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 .cake_type{
     /* font-size: 1.5vw;    */
-    font-size: 25px;
+    font-size: 22px;
     color:white;
+    margin-left: 20px;
 
 }
 
 .brand-name {
     color: white;
-    font-size: 6.7vw;
+    font-size: 6.9vw;
     font-family: 'Allura', cursive;
 }
 
@@ -40,9 +41,8 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 .about_gurl_container {
     overflow:auto;
-
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     /* margin: auto 2em; */
     
      /* position: absolute; */
@@ -52,9 +52,9 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
      align-items: center;
      justify-content: center;
 
-     background-color: white;
-    /* box-shadow: 0 0 50px #333; */
-    box-shadow: 0 0 20px #333;
+     background-color: rgba(216, 216, 216, 0.267);
+    box-shadow: 0 0 25px #333;
+
        
 }
 
@@ -68,7 +68,8 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     width: 28%;
     text-align: center;
 
-    margin-right: 50px;
+    margin-right: 20px;
+    
 }
 
 /* .menu a {
@@ -84,20 +85,43 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 .about_gurl_info {
     float: left;
-    width: 30%;
+    width: 25%;
     /* padding: 0 20px; */
-    background-color: yellow;
+    /* background-color: yellow; */
     text-align: center;
+    /* margin-left: 5%; */
+}
 
-
-
+.alice{
+    font-family: 'Allura', cursive;
+    margin-bottom: 20px;
 }
 
 
+.endSecPic_container{
+    display:flex;
+    max-height: 500px;
+    margin-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.endSec1 {
+    margin-right: 20px;
+}
+
+.endSec1,
+.endSec2 {
+    height: auto;
+    width: 180px;
+}
 
 .main-gurl-img{
-    /* min-width: 300px;
-    height: auto; */
+    /* width: auto; */
+    /* max-height: 40%; */
+    width: 80%;
+    /* height: auto;
+    object-fit: contain; */
 }
 
 
@@ -121,6 +145,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 .mobile-gurl-name {
     display: none;
     text-align: center;
+    font-family: 'Allura', cursive;
 }
 
 
@@ -142,9 +167,17 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     .mobile-gurl-name {
         display:block;
     }
+    
+    .main-gurl-img{
+        width: 100%;
+    }
 
     .brand-name{
         font-size: 58px;
+    }
+
+    .cake_type{
+        font-size: 15px;
     }
 
     .about_gurl_container{

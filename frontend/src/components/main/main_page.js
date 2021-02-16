@@ -2,9 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import '../../assets/stylesheets/main.css';
 import tempBG from '../../assets/images/main/temp.jpg';
+import mainSec2 from '../../assets/images/main/mainSec2.jpg';
 import gurl from '../../assets/images/main/gf0.jpg';
+import endSec1 from '../../assets/images/main/endSec1.jpg';
+import endSec2 from '../../assets/images/main/endSec2.jpg';
 
-import {Parallax} from 'react-parallax';
+import {Parallax, Background} from 'react-parallax';
 
 const inlineStyle = {
     background: '#fff',
@@ -24,7 +27,7 @@ const MainPage = (props) => {
 
             <Parallax bgImage={tempBG} strength={300} className='parallax_container'>
                 <div className='title_container' style={{height: 700}}>
-                    <h1 className='cake_type'>-  BASQUE CHEESECAKES  -</h1>
+                    <h1 className='cake_type'>- BASQUE CHEESECAKES -</h1>
                     <h1 className='brand-name'>Cakedup.sf</h1>
                 </div>
             </Parallax>
@@ -45,10 +48,7 @@ const MainPage = (props) => {
 
                 <div className="about_gurl_info">
                     <div className="about_gurl_name"> 
-                        <h1>Alice Hu</h1>
-                    </div>
-                    <div>
-                        <p>lorem ipsum dolor sit amet, consectet</p>
+                        <h1 className='alice'>Alice Hu</h1>
                     </div>
                     <div>
                         <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.​ This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide.</p>
@@ -64,22 +64,20 @@ const MainPage = (props) => {
                 </div> */}
             </div>
 
-        
-            <Parallax bgImage={tempBG} strength={300} className='parallax_container'>
-                <div className='title_container' style={{height: 700}}>
-                    <h1 className='cake_type'>- BASQUE CHEESECAKES -</h1>
+            <Parallax bgImage={mainSec2} bgImageStyle={{top: '-30%'}} strength={500} className='parallax_container'>
+
+                <div className='title_container' style={{height: 600}}>
+                    <h1 className='cake_type'>-  BASQUE CHEESECAKES  -</h1>
                     <h1 className='brand-name'>Cakedup.sf</h1>
                 </div>
             </Parallax>
 
 
             <div className ='about_gurl_container' >
-                <div className="mobile-gurl-name"> 
-                    <h1>Alice Hu</h1>
-                </div>
 
-                <div className='gurl_container'>
-                    <img alt="" src={gurl} className='main-gurl-img'/>
+                <div className='endSecPic_container'>
+                    <img alt="" src={endSec1} className='endSec1'/>
+                    <img alt="" src={endSec2} className='endSec2'/>
                 </div>
 
                 <div className="about_gurl_info">
