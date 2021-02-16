@@ -1,8 +1,17 @@
 /* CSS-Only Parallax Effect
 https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
+.navBar-main-container{
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    padding: 15px;
+    opacity: 0.8;
+    display: flex;
 
-
+    color: white;
+}
+/*! ========================= navbar */
 
 .parallax_container{
     z-index: -1;
@@ -53,7 +62,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
      justify-content: center;
 
      background-color: rgba(216, 216, 216, 0.267);
-    box-shadow: 0 0 25px #333;
+    box-shadow: 0 0 25px rgb(26, 25, 25);
 
        
 }
@@ -92,9 +101,17 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     /* margin-left: 5%; */
 }
 
+.about_gurl_info p {
+    /* font-size: 18px; */
+    font-size: 1vw;
+}
 .alice{
     font-family: 'Allura', cursive;
     margin-bottom: 20px;
+    /* font-size: 50px; */
+    font-size: 4vw;
+
+    border-bottom: 1px solid black;
 }
 
 
@@ -166,6 +183,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
     .mobile-gurl-name {
         display:block;
+        font-size: 20px;
     }
     
     .main-gurl-img{
@@ -183,4 +201,10 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     .about_gurl_container{
         display: block;
     }
+
+    .about_gurl_info p {
+        font-size: 17px;
+    }
+
+    
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import '../../assets/stylesheets/main.css';
 import tempBG from '../../assets/images/main/temp.jpg';
 import mainSec2 from '../../assets/images/main/mainSec2.jpg';
@@ -7,16 +7,7 @@ import gurl from '../../assets/images/main/gf0.jpg';
 import endSec1 from '../../assets/images/main/endSec1.jpg';
 import endSec2 from '../../assets/images/main/endSec2.jpg';
 
-import {Parallax, Background} from 'react-parallax';
-
-const inlineStyle = {
-    background: '#fff',
-    left: '50%',
-    top: '50%',
-    position: 'absolute',
-    padding: '20px',
-    transform: 'translate(-50%, -50%)',
-}
+import {Parallax} from 'react-parallax';
 
 
 
@@ -24,8 +15,13 @@ const MainPage = (props) => {
 
     return (
         <div className='main_container'>
+            <div className='navBar-main-container'>
+                <h1>Home</h1>
+                <h1>Menu</h1>
+                <h1>Order</h1>
+            </div>
 
-            <Parallax bgImage={tempBG} strength={300} className='parallax_container'>
+            <Parallax bgImage={tempBG} bgImageStyle={{top: '-8%'}} strength={300} className='parallax_container'>
                 <div className='title_container' style={{height: 700}}>
                     <h1 className='cake_type'>- BASQUE CHEESECAKES -</h1>
                     <h1 className='brand-name'>Cakedup.sf</h1>
