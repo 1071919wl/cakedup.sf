@@ -7,6 +7,8 @@ import gurl from '../../assets/images/main/gf0.jpg';
 import endSec1 from '../../assets/images/main/endSec1.jpg';
 import endSec2 from '../../assets/images/main/endSec2.jpg';
 
+import ModalContainer from '../modal/modal_container';
+
 import {Parallax} from 'react-parallax';
 
 
@@ -15,10 +17,12 @@ const MainPage = (props) => {
 
     return (
         <div className='main_container'>
+            <ModalContainer />
+            
             <div className='navBar-main-container'>
                 <h1>Home</h1>
                 <h1>Menu</h1>
-                <h1>Order</h1>
+                <h1 onClick={() => props.openModal('request')}>Order</h1>
             </div>
 
             <Parallax bgImage={tempBG} bgImageStyle={{top: '-8%'}} strength={300} className='parallax_container'>

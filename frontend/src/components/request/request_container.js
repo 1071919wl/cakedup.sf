@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchOrders } from '../../actions/order_actions';
-import Order from './order';
+import { postOrder } from '../../actions/order_actions';
+import Request from './request';
+
 
 const mapStateToProps = state => {
     // console.log(state.entities.orders, 'container')
@@ -11,8 +12,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchOrders: () => dispatch(fetchOrders())
+        postOrder: (newOrder) => dispatch(postOrder(newOrder))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Order);
+export default connect(mapStateToProps, mapDispatchToProps)(Request);

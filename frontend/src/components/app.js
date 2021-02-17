@@ -2,18 +2,20 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 
-import MainPage from './main/main_page';
+// import MainPage from './main/main_page';
+import MainPageContainer from './main/main_page_container';
 // import NavBarContainer from './nav/navbar_container';
 import LoginFormContainer from './session/login_form_container';
 import OrderFormContainer from './order/order_container';
 import ScrollToTop from './ScrollToTop.js';
 import '../assets/stylesheets/reset.css';
 
+
 const App = () => (
   <div>
     <ScrollToTop />
     {/* <NavBarContainer /> */}
-    <Route exact path="/" component={MainPage} />
+    <Route exact path="/" component={MainPageContainer} />
     <Switch>
       <AuthRoute exact path="/admin-login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/order" component={OrderFormContainer} />
