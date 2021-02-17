@@ -1,6 +1,7 @@
 /* CSS-Only Parallax Effect
 https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
+/*! ========================= navbar */
 .navBar-main-container{
     position: fixed;
     width: 100%;
@@ -10,6 +11,19 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     display: flex;
 
     color: white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBar-main-select{
+    display:flex;
+    margin-left: 100px;
+}
+
+.instagram{
+    height: auto;
+    width: 30px;
+    margin-right: 100px;
 }
 /*! ========================= navbar */
 
@@ -124,7 +138,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 }
 
 .endSec1 {
-    margin-right: 20px;
+    margin-right: 15px;
 }
 
 .endSec1,
@@ -142,6 +156,49 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 }
 
 
+/*! QUAD4 IMG SEC START*/
+.quadSecPic_container{
+    display: flex;
+}
+
+.q1{
+    object-fit: cover;
+    object-position: 100% 0;
+    padding: 10px;
+    width: 240px;
+    height: 260px;
+
+}
+
+.q2 {
+    object-fit: cover;
+    object-position: 100% 0 ;
+    padding: 10px;
+
+    width: 240px;
+    height: 260px;
+
+}
+
+.q3{
+    object-fit: cover;
+    padding: 10px;
+    width: 240px;
+    height: 260px;
+
+}
+
+.q4 {
+    object-fit: cover;
+    padding: 10px;
+    width: 240px;
+    height: 260px;
+
+}
+
+/*! QUAD4 IMG SEC END*/
+
+
 .copyRight{
     background-color:#e5e5e5;
     text-align:center;
@@ -149,15 +206,6 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     margin-top:7px;
 }
 
-
-.about {
-    background-color: #e5e5e5;
-    float: left;
-    width: 20%;
-    /* padding: 15px; */
-    margin-top: 7px;
-    text-align: center;
-}
 
 .mobile-gurl-name {
     display: none;
@@ -175,6 +223,10 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     .gurl_container
     {
         width: 100%;
+    }
+
+    .title_container {
+        height: 200px;
     }
 
     .about_gurl_name{
@@ -205,6 +257,17 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     .about_gurl_info p {
         font-size: 17px;
     }
-
+    .quadSecPic_container{
+        display: block;
+        /* align-items: center; */
+    }
     
+    .q1,
+    .q2,
+    .q3,
+    .q4{
+        height: auto;
+        width: 100%;
+    }
+
 }
