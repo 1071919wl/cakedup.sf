@@ -12,8 +12,14 @@ const OrderSchema = new Schema({
     },
     date:{
         type: Date,
-        default: Date.now
+        default: Date.now,
+        required: true
+    },
+    comment:{
+        type: String
     }
+
+
 });
 
 const Order = mongoose.model('Order', OrderSchema);

@@ -26,7 +26,8 @@ router.post("/",
         const newOrder = new Order({
             name: req.body.name,
             phone: req.body.phone,
-            date: req.body.date
+            date: req.body.date,
+            comment: req.body.comment
         });
 
         newOrder.save()
@@ -61,6 +62,10 @@ router.patch("/:id", passport.authenticate('jwt',{session:false}), async (req, r
                 order.date = req.body.date
             }
 
+            if (req.body.comment) {
+                order.comment = req.body.comment
+            }
+
             await order.save()
             res.send(order)
 
@@ -83,7 +88,7 @@ router.delete("/:id", passport.authenticate('jwt',{session:false}), async (req, 
             .then(() => res.json(order))
             .catch(err => res.status(404).json(err))
     } else {
-        return res.json("question not found")
+        return res.json("order not found")
     }
 })
 

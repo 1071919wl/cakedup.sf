@@ -6,6 +6,7 @@ module.exports = function validateOrderInput(data){
 
     data.name = validText(data.name) ? data.name : '';
     data.phone = validText(data.phone) ? data.phone : '';
+    data.date = validText(data.date) ? data.date : '';
 
     if(Validator.isEmpty(data.name)){
         errors.name = 'Please tell us your name'
@@ -17,6 +18,10 @@ module.exports = function validateOrderInput(data){
 
     if(!Validator.isLength(data.phone, {min: 10, max: 11})){
         errors.phone = 'Please provide valid number'
+    }
+
+    if(Validator.isEmpty(data.date)){
+        errors.date = 'Please select a pick up date'
     }
 
     return {

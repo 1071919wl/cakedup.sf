@@ -25,15 +25,26 @@ import {Parallax} from 'react-parallax';
 
 const MainPage = (props) => {
 
+
+    let rootElement = document.documentElement;
+
+    const scrollToTop = () => {
+      rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
+
     return (
         <div className='main_container'>
             <ModalContainer />
             
             <div className='navBar-main-container'>
                 <div className='navBar-main-select'>
-                    <h1>Home</h1>
-                    <h1>Menu</h1>
-                    <h1 onClick={() => props.openModal('request')}>Order</h1>
+                    <h1 id='home' onClick={() => scrollToTop()}>Home</h1>
+                    <h1 onClick={() => props.openModal('request')}>Menu</h1>
+                    {/* <h1 onClick={() => props.openModal('request')}>Order</h1> */}
                 </div>
                 <div>
                     <a href='https://www.instagram.com/cakedup.sf/'>
