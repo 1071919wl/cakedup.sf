@@ -1,4 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
+import '../../assets/stylesheets/request.scss';
+
+import quad1 from '../../assets/images/quad/q1.jpg';
 
 const Request = ({postOrder}) => {
 
@@ -26,29 +29,46 @@ const Request = ({postOrder}) => {
 
     return(
         <div>
-            Classics
-            <form onSubmit={submitRequest}>
-                <label>Name:
-                    <input type='text' value={name} onChange={e => setName(e.target.value)}/>
-                </label>
+            <h1 className='request_title'>Menu</h1>
+            <h2 className='classic_options'>Classic Flavors</h2>
 
-                <label>Phone:
-                    <input type='text' value={phone} onChange={e => setPhone(e.target.value)}/>
-                </label>
 
-                <label>Date:
-                    <input type="date" value={date} onChange={e => setDate(e.target.value)}/>
-                </label>
+            <div className='menu_container'>
 
-                <label>Special requests
-                    <textarea type='text' value={comment} onChange={e => setComment(e.target.value)} />
-                </label>
+                <div className='menu_img_sec'>
+                    <img alt="" src={quad1} className='q1'/>
+                    <img alt="" src={quad1} className='q1'/>
+                    <img alt="" src={quad1} className='q1'/>
 
-                <div>
-                    <input type='submit' value='Submit Order'/>
+
                 </div>
 
-            </form>
+                <div className='menu_form_container'>
+                    <form onSubmit={submitRequest} >
+                        <label>Name:
+                            <input type='text' value={name} onChange={e => setName(e.target.value)}/>
+                        </label>
+
+                        <label>Phone:
+                            <input type='text' value={phone} onChange={e => setPhone(e.target.value)}/>
+                        </label>
+
+                        <label>Date:
+                            <input type="date" value={date} onChange={e => setDate(e.target.value)}/>
+                        </label>
+
+                        <label>Special requests
+                            <textarea type='text' value={comment} onChange={e => setComment(e.target.value)} />
+                        </label>
+
+                        <div>
+                            <input type='submit' value='Submit Order'/>
+                        </div>
+
+                    </form>
+                </div>
+            
+            </div>
         </div>
     )
 }

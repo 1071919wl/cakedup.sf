@@ -5,7 +5,6 @@
     right: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.7);
-    
     z-index: 10;
 }
 
@@ -15,4 +14,24 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: yellow;
+    border: 1px solid lightgray;
+    height: 85%;
+    width: 50%;
+}
+
+.close-x{
+    background-color: green;
+    float: right;
+}
+
+
+/*! ===================== mobile */
+@media only screen and (max-width:620px) {
+
+    /* For mobile phones: */
+    .modal-child {
+        width: 90%;
+        height: 70%;
+    }
+
 }
