@@ -13,11 +13,13 @@
 
 .menu_container{
     display: flex;
-    justify-content: space-between;
-    background-color: orange;
+    // justify-content: space-between;
+    // background-color: orange;
     // width: 840px;
     width: 100%;
-    margin-right: 10px;
+    // margin-right: 8px;
+    // margin-left:8px;
+     flex: 0 0 calc(33.33% - 30px);
 
 
 
@@ -25,9 +27,16 @@
         background-color: pink;
         display: flex;
         justify-content: center;
+        // flex-direction: row;
         flex-wrap: wrap;
         max-width: 580px;
         // overflow-wrap: anywhere;
+
+        .q1{
+            // background-color: burlywood;
+            width: 40%;
+            height: auto;
+        }
     }
 
 
@@ -35,13 +44,64 @@
     .menu_form_container{
         display:flex;
         flex-direction:column;
-        background-color: turquoise;
-        width: 400px;
+        // background-color: turquoise;
+        border: 3px solid lightgray;
+        // width: 400px;
 
+        .myOrder-topSec{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid lightgray;
+        }
 
+        .subtotal-topSec{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            // border-top: 2px solid lightgray;
+            outline: 1px solid lightgray;
+
+        }
+
+        .menu-topSec{
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+
+            .menu_img {
+                height: auto;
+                width: 80px;
+
+            }
+
+        }
         .menu_form{
             display: flex;
             flex-direction:column;
+            // width: 250px;
+            
+
+
+             .order_submit {
+                 color: #fff;
+                 max-width: 140px;
+                 text-align: center;
+                 padding: 10px;
+                 padding-top: 9px;
+                 padding-bottom: 9px;
+                 margin-top: 45px;
+                 margin-bottom: 10px;
+                 background-color: rgb(145, 135, 102);
+                 text-decoration: none;
+                 border-radius: 5px;
+             }
+
+             .order_submit:hover {
+                 background-color:rgb(144, 129, 80);
+                 text-decoration: none;
+             }
         }
     }
 
@@ -53,13 +113,26 @@
     /* For mobile phones: */
     .menu_container{
         display: block;
+
+
+        .menu_img_sec {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .q1{
+                width: 100%;
+            }
+        }
     }
     
     .menu_form_container{
         margin-bottom: 20px;
 
-    
-
     }
 
+    
+
 }
+
+

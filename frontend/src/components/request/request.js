@@ -4,6 +4,8 @@ import '../../assets/stylesheets/request.scss';
 
 import quad1 from '../../assets/images/quad/q1.jpg';
 
+import menu from '../../assets/images/request/menu.png';
+
 const Request = ({postOrder}) => {
 
     const [name, setName] = useState("");
@@ -37,29 +39,56 @@ const Request = ({postOrder}) => {
             <div className='menu_container'>
 
                 <div className='menu_img_sec'>
-                    <div>
-                        <img alt="" src={quad1} className='q1'/>
-                    </div>
-                    <div>
-                        <img alt="" src={quad1} className='q1'/>
-                    </div>
-                    <div>
-                        <img alt="" src={quad1} className='q1'/>
-                    </div>
-                    <div>
-                        <img alt="" src={quad1} className='q1'/>
-                    </div>
-                    <div>
-                        <img alt="" src={quad1} className='q1'/>
-                    </div>
-                    <div>
-                        <img alt="" src={quad1} className='q1'/>
-                    </div>
+                    
+                    <img alt="" src={quad1} className='q1'/>
+                
+                
+                    <img alt="" src={quad1} className='q1'/>
+                
+                
+                    <img alt="" src={quad1} className='q1'/>
+                
+                
+                    <img alt="" src={quad1} className='q1'/>
+                
+                
+                    <img alt="" src={quad1} className='q1'/>
+                
+                
+                    <img alt="" src={quad1} className='q1'/>
+                    
 
 
                 </div>
 
                 <div className='menu_form_container'>
+
+                    <div className='myOrder-topSec'>
+                        <div>
+                            My Order
+                        </div>
+                        <div>
+                            (0 items)
+                        </div>
+                    </div>
+
+
+                    <div className='menu-topSec'>
+                        <div>
+                            <img alt="" src={menu} className='menu_img'/>
+                        </div>
+                    </div>
+
+                    <div className='subtotal-topSec'>
+                        <div>
+                            Subtotal
+                        </div>
+                        <div>
+                            (0 items)
+                        </div>
+                    </div>
+
+
                     <form onSubmit={submitRequest} className='menu_form'>
                         <label>Name:
                             <input type='text' value={name} onChange={e => setName(e.target.value)}/>
@@ -78,7 +107,7 @@ const Request = ({postOrder}) => {
                         </label>
 
                         <div>
-                            <input type='submit' value='Submit Order'/>
+                            <input type='submit' value='Submit Order' className='order_submit'/>
                         </div>
 
                     </form>
