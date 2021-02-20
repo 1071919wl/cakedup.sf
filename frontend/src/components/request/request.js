@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import '../../assets/stylesheets/request.scss';
 
 import quad1 from '../../assets/images/quad/q1.jpg';
@@ -36,15 +37,30 @@ const Request = ({postOrder}) => {
             <div className='menu_container'>
 
                 <div className='menu_img_sec'>
-                    <img alt="" src={quad1} className='q1'/>
-                    <img alt="" src={quad1} className='q1'/>
-                    <img alt="" src={quad1} className='q1'/>
+                    <div>
+                        <img alt="" src={quad1} className='q1'/>
+                    </div>
+                    <div>
+                        <img alt="" src={quad1} className='q1'/>
+                    </div>
+                    <div>
+                        <img alt="" src={quad1} className='q1'/>
+                    </div>
+                    <div>
+                        <img alt="" src={quad1} className='q1'/>
+                    </div>
+                    <div>
+                        <img alt="" src={quad1} className='q1'/>
+                    </div>
+                    <div>
+                        <img alt="" src={quad1} className='q1'/>
+                    </div>
 
 
                 </div>
 
                 <div className='menu_form_container'>
-                    <form onSubmit={submitRequest} >
+                    <form onSubmit={submitRequest} className='menu_form'>
                         <label>Name:
                             <input type='text' value={name} onChange={e => setName(e.target.value)}/>
                         </label>
