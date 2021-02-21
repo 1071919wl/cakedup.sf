@@ -19,7 +19,7 @@
     width: 100%;
     // margin-right: 8px;
     // margin-left:8px;
-     flex: 0 0 calc(33.33% - 30px);
+    flex: 0 0 calc(33.33% - 30px);
 
 
 
@@ -32,10 +32,20 @@
         max-width: 580px;
         // overflow-wrap: anywhere;
 
-        .q1{
-            // background-color: burlywood;
+        .menu_list{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            // background-color: purple;
             width: 40%;
             height: auto;
+
+        }
+
+        .q1{
+            background-color: burlywood;
+            // width: 40%;
+            // height: auto;
         }
     }
 
@@ -66,14 +76,23 @@
         }
 
         .menu-topSec{
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
+              display: flex;
+              flex-direction: column;
+            //   margin-left: auto;
+            //   margin-right: auto;
+            justify-content: center;
+            align-items: center;
+              width: 100%;
+              height: 250px;
 
             .menu_img {
                 height: auto;
-                width: 80px;
+                width: 100px;
 
+            }
+
+            .menu-direction{
+                text-align: center;
             }
 
         }
@@ -82,26 +101,30 @@
             flex-direction:column;
             // width: 250px;
             
+            .submit_container{ 
+                display: flex;
+                justify-content: center;
 
+                .order_submit {
+                    color: #fff;
+                    max-width: 140px;
+                    text-align: center;
+                    padding: 45px;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    margin-top: 45px;
+                    margin-bottom: 10px;
+                    background-color: rgb(145, 135, 102);
+                    text-decoration: none;
 
-             .order_submit {
-                 color: #fff;
-                 max-width: 140px;
-                 text-align: center;
-                 padding: 10px;
-                 padding-top: 9px;
-                 padding-bottom: 9px;
-                 margin-top: 45px;
-                 margin-bottom: 10px;
-                 background-color: rgb(145, 135, 102);
-                 text-decoration: none;
-                 border-radius: 5px;
-             }
+                }
+    
+                .order_submit:hover {
+                    background-color:rgb(144, 129, 80);
+                    text-decoration: none;
+                }
+            }
 
-             .order_submit:hover {
-                 background-color:rgb(144, 129, 80);
-                 text-decoration: none;
-             }
         }
     }
 

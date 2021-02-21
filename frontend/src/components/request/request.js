@@ -30,6 +30,39 @@ const Request = ({postOrder}) => {
     }
 
 
+    const classicFlavors = [
+        {
+            name: 'flavor1', 
+            price:30,
+            img: quad1
+        },
+        {
+            name: 'flavor1', 
+            price:30,
+            img: quad1
+        },
+        {
+            name: 'flavor1', 
+            price:30,
+            img: quad1
+        },
+        {
+            name: 'flavor1', 
+            price:30,
+            img: quad1
+        },
+        {
+            name: 'flavor1', 
+            price:30,
+            img: quad1
+        },
+        {
+            name: 'flavor1', 
+            price:30,
+            img: quad1
+        }
+    ];
+
     return(
         <div>
             <h1 className='request_title'>Menu</h1>
@@ -39,25 +72,15 @@ const Request = ({postOrder}) => {
             <div className='menu_container'>
 
                 <div className='menu_img_sec'>
-                    
-                    <img alt="" src={quad1} className='q1'/>
-                
-                
-                    <img alt="" src={quad1} className='q1'/>
-                
-                
-                    <img alt="" src={quad1} className='q1'/>
-                
-                
-                    <img alt="" src={quad1} className='q1'/>
-                
-                
-                    <img alt="" src={quad1} className='q1'/>
-                
-                
-                    <img alt="" src={quad1} className='q1'/>
-                    
-
+                    {classicFlavors.map((flavor) => {
+                        return(
+                            <div className='menu_list'>
+                                <img alt="" src={flavor.img} className='q1'/>
+                                <p>{flavor.name}</p>
+                                <p>${flavor.price}</p>
+                            </div>
+                        )
+                    })}
 
                 </div>
 
@@ -76,6 +99,10 @@ const Request = ({postOrder}) => {
                     <div className='menu-topSec'>
                         <div>
                             <img alt="" src={menu} className='menu_img'/>
+                        </div>
+                        <div className='menu-direction'>
+                            <p>Order is empty.</p>
+                            <p>Browse our menu and start adding items.</p>
                         </div>
                     </div>
 
@@ -106,7 +133,7 @@ const Request = ({postOrder}) => {
                             <textarea type='text' value={comment} onChange={e => setComment(e.target.value)} />
                         </label>
 
-                        <div>
+                        <div className ='submit_container'>
                             <input type='submit' value='Submit Order' className='order_submit'/>
                         </div>
 
