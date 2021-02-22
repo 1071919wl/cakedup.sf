@@ -7,7 +7,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     width: 100%;
     background-color: black;
     padding: 15px;
-    opacity: 0.8;
+    opacity: 0.75;
     display: flex;
 
     color: white;
@@ -58,6 +58,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     color: white;
     font-size: 6.9vw;
     font-family: 'Allura', cursive;
+
 }
 
 
@@ -156,6 +157,21 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 }
 
 
+
+.end_sec_container{
+    overflow:auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background-color: rgba(14, 13, 13, 0.924);
+    /* box-shadow: 0 0 25px rgb(26, 25, 25); */
+}
+
+
 /*! QUAD4 IMG SEC START*/
 .quadSecPic_container{
     display: flex;
@@ -172,7 +188,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 .q2 {
     object-fit: cover;
-    object-position: 100% 0 ;
+    object-position: 100% 50%;
     padding: 10px;
 
     width: 240px;
@@ -182,6 +198,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 .q3{
     object-fit: cover;
+    object-position: 100% 90%;
     padding: 10px;
     width: 240px;
     height: 260px;
@@ -190,6 +207,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 .q4 {
     object-fit: cover;
+    object-position: 100% 90%;
     padding: 10px;
     width: 240px;
     height: 260px;
@@ -200,10 +218,19 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 
 .copyRight{
-    background-color:#e5e5e5;
+    font-family: sans-serif;
+    font-size:12px;
+    /* background-color:#5d5555dc; */
+    background-color: rgb(17, 17, 17);
     text-align:center;
-    padding:10px;
-    margin-top:7px;
+    padding:12px;
+    /* margin-top:7px; */
+    color: white;
+}
+
+.tristan{
+    color: rgb(66, 66, 255);
+    text-decoration: underline;
 }
 
 
@@ -217,6 +244,15 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 @media only screen and (max-width:620px) {
 
     /* For mobile phones: */
+
+    .navBar-main-select {
+        margin-left: 0px;
+    }
+
+    .instagram{
+        margin-right: 30px;
+    }
+
     .about,
     .title_container,
     .about_gurl_info,
@@ -250,7 +286,8 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
         font-size: 15px;
     }
 
-    .about_gurl_container{
+    .about_gurl_container,
+    .end_sec_container {
         display: block;
     }
 

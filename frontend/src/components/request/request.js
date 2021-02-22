@@ -11,6 +11,7 @@ const Request = ({postOrder}) => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState('');
     const [date, setDate] = useState('');
+    const [order, setOrder] = useState([]);
     const [comment, setComment] = useState("");
 
     const submitRequest = (e) => {
@@ -20,6 +21,7 @@ const Request = ({postOrder}) => {
             name: name,
             phone: phone,
             date: date,
+            order: order,
             comment: comment
         };
 
@@ -64,7 +66,7 @@ const Request = ({postOrder}) => {
     ];
 
     return(
-        <div>
+        <div className='request_container'>
             <h1 className='request_title'>Menu</h1>
             <h2 className='classic_options'>Classic Flavors</h2>
 
@@ -72,12 +74,14 @@ const Request = ({postOrder}) => {
             <div className='menu_container'>
 
                 <div className='menu_img_sec'>
-                    {classicFlavors.map((flavor) => {
+                    {classicFlavors.map((flavor, i) => {
                         return(
-                            <div className='menu_list'>
+                            <div className='menu_list' key={i}>
                                 <img alt="" src={flavor.img} className='q1'/>
-                                <p>{flavor.name}</p>
-                                <p>${flavor.price}</p>
+                                <div className='item_and_price'>
+                                    <p>{flavor.name}</p>
+                                    <p>${flavor.price}</p>
+                                </div>
                             </div>
                         )
                     })}

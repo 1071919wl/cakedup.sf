@@ -2,19 +2,20 @@ import React from 'react';
 // import { Link } from 'react-router-dom'
 import '../../assets/stylesheets/main.css';
 
-import tempBG from '../../assets/images/main/temp.jpg';
-import cakeSplash from '../../assets/images/main/cake_splash.jpg';
-import cakeSplash2 from '../../assets/images/main/cake_splash2.jpg';
+import cakeSplash from '../../assets/images/main/CAKEDUP.SF-59.jpg';
+import cakeSplash2 from '../../assets/images/main/CAKEDUP.SF-30.jpg';
 
 import instagram from '../../assets/images/main/instagram.png';
-import mainSec2 from '../../assets/images/main/mainSec2.jpg';
+import mainSec2 from '../../assets/images/main/CAKEDUP.SF-72.jpg';
 import gurl from '../../assets/images/main/gf0.jpg';
 import endSec1 from '../../assets/images/main/endSec1.jpg';
-import endSec2 from '../../assets/images/main/endSec2.jpg';
+// import endSec2 from '../../assets/images/main/endSec2.jpg';
+import endSec2 from '../../assets/images/main/CAKEDUP.SF-27.jpg';
+
 
 import quad1 from '../../assets/images/quad/q1.jpg';
-import quad2 from '../../assets/images/quad/q2.jpg';
-import quad3 from '../../assets/images/quad/q3.jpg';
+import quad2 from '../../assets/images/quad/CAKEDUP.SF-46.jpg';
+import quad3 from '../../assets/images/quad/CAKEDUP.SF-97.jpg';
 import quad4 from '../../assets/images/quad/q4.jpg';
 
 import ModalContainer from '../modal/modal_container';
@@ -53,7 +54,7 @@ const MainPage = (props) => {
                 </div>
             </div>
 
-            <Parallax bgImage={cakeSplash} bgImageStyle={{top: '-35%'}} strength={300} className='parallax_container'>
+            <Parallax bgImage={cakeSplash} bgImageStyle={{top: '-23%'}} strength={300} className='parallax_container'>
                 <div className='title_container' style={{height: 680}}>
                     <h1 className='cake_type'>- BASQUE CHEESECAKES -</h1>
                     <h1 className='brand-name'>Cakedup.sf</h1>
@@ -82,9 +83,9 @@ const MainPage = (props) => {
                 </div>
             </div>
 
-            <Parallax bgImage={mainSec2} bgImageStyle={{top: '-30%'}} strength={400} className='parallax_container'>
+            <Parallax bgImage={mainSec2} bgImageStyle={{top: '-23%'}} strength={400} className='parallax_container'>
 
-                <div className='title_container' style={{height: 600}}>
+                <div className='title_container' style={{height: 480}}>
                     <h1 className='cake_type'>-  BASQUE CHEESECAKES  -</h1>
                     <h1 className='brand-name'>Cakedup.sf</h1>
                 </div>
@@ -112,25 +113,26 @@ const MainPage = (props) => {
                 <div className='quadSecPic_container'>
                     <div>
                         <img alt="" src={quad1} className='q1'/>
-                        <img alt="" src={quad2} className='q2'/>
+                        <img alt="" src={quad4} className='q4'/>
+                        
                     </div>
                     <div>
+                        <img alt="" src={quad2} className='q2'/>
                         <img alt="" src={quad3} className='q3'/>
-                        <img alt="" src={quad4} className='q4'/>
                     </div>
                 </div>
             </div>
 
-            <Parallax bgImage={cakeSplash2} bgImageStyle={{top: '-25%'}} strength={400} className='parallax_container'>
+            <Parallax bgImage={cakeSplash2} bgImageStyle={{top: '-20%'}} strength={400} className='parallax_container'>
 
-                <div className='title_container' style={{height: 500}}>
+                <div className='title_container' style={{height: 550}}>
                     <h1 className='cake_type'>-  BASQUE CHEESECAKES  -</h1>
                     <h1 className='brand-name'>Cakedup.sf</h1>
                 </div>
             </Parallax>
 
 
-            <div className ='about_gurl_container' >
+            <div className ='end_sec_container' >
 
                 <div className='endSecPic_container'>
                     <img alt="" src={endSec1} className='endSec1'/>
@@ -155,7 +157,9 @@ const MainPage = (props) => {
 
             <footer className='footer_container'>
                 <div className='copyRight'>
-                    <div>&copy;2020 by Cakedup.sf</div>
+                    <div>&copy;2020 by CakedupSf. Photos by&nbsp;
+                        <a href='https://www.instagram.com/trztvn/' className='tristan'>Tristan Nguyen.</a>
+                    </div>
                 </div>
                 
             </footer>

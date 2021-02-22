@@ -6,6 +6,7 @@
     left: 0;
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
+
 }
 
 .modal-child {
@@ -16,15 +17,47 @@
     background-color: white;
     border: 1px solid lightgray;
     height: 85%;
-    width: 65%;
+    /* width: 70%; */
+    width: 950px;
 
     overflow: auto;
 }
 
 .close-x{
-    background-color: green;
-    float: right;
+    /* float: right; */
+    position: absolute;
+    right: -10px;
+    top: 5px;
+    margin-right: 20px;
+    width: 32px;
+    /* height: 32px; */
+    opacity: 0.3;
 }
+
+.close-x:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.close-x:before,
+.close-x:after {
+    position: absolute;
+    /* float: right; */
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close-x:before {
+    transform: rotate(45deg);
+}
+
+.close-x:after {
+    transform: rotate(-45deg);
+}
+
 
 
 
