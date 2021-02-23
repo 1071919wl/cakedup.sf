@@ -16,6 +16,7 @@ const Request = ({postOrder}) => {
 
     const submitRequest = (e) => {
         e.preventDefault();
+        console.log(order)
 
         let newOrder = {
             name: name,
@@ -25,13 +26,43 @@ const Request = ({postOrder}) => {
             comment: comment
         };
 
-        
         postOrder(newOrder).then(() => {
             alert('thanks for your submission')
         });
     }
 
+    //updates order state with what's in cart
+    const handleOrder = (flavor, price) => {
 
+        let newOrder = {
+            name: flavor,
+            count: 1,
+            priceEach: price
+        };
+
+        let match = false;
+        let newArr = [];
+
+        for(let i = 0; i < order.length; i ++){
+            if( order[i].name === flavor ){
+                order[i].count += 1;
+                newArr.push(order[i]);
+                match = true;
+            }else{
+                newArr.push(order[i]);
+            };
+
+        }
+        
+        if( match === false){
+            newArr.length = 0;
+            newArr.push(...order, newOrder);
+        };
+
+        setOrder(newArr);
+    }
+
+    //seeding classic flavors
     const classicFlavors = [
         {
             name: 'flavor1', 
@@ -39,28 +70,28 @@ const Request = ({postOrder}) => {
             img: quad1
         },
         {
-            name: 'flavor1', 
+            name: 'flavor2', 
+            price:20,
+            img: quad1
+        },
+        {
+            name: 'flavor3', 
+            price:40,
+            img: quad1
+        },
+        {
+            name: 'flavor4', 
             price:30,
             img: quad1
         },
         {
-            name: 'flavor1', 
-            price:30,
+            name: 'flavor5', 
+            price:35,
             img: quad1
         },
         {
-            name: 'flavor1', 
-            price:30,
-            img: quad1
-        },
-        {
-            name: 'flavor1', 
-            price:30,
-            img: quad1
-        },
-        {
-            name: 'flavor1', 
-            price:30,
+            name: 'flavor6', 
+            price:40,
             img: quad1
         }
     ];
@@ -81,6 +112,7 @@ const Request = ({postOrder}) => {
                                 <div className='item_and_price'>
                                     <p>{flavor.name}</p>
                                     <p>${flavor.price}</p>
+                                    <input type="button" value='ADD' onClick={() => handleOrder(flavor.name, flavor.price)}/>
                                 </div>
                             </div>
                         )
