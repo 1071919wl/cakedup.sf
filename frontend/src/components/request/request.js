@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import '../../assets/stylesheets/request.scss';
 
 import quad1 from '../../assets/images/quad/q1.jpg';
-
-import menu from '../../assets/images/request/menu.png';
+import menu2 from '../../assets/images/request/menu2.png';
 
 const Request = ({postOrder}) => {
 
@@ -13,7 +12,9 @@ const Request = ({postOrder}) => {
     const [date, setDate] = useState('');
     const [order, setOrder] = useState([]);
     const [comment, setComment] = useState("");
+    const [itemCount, setItemCount] = useState(0);
 
+    //sents order information to database
     const submitRequest = (e) => {
         e.preventDefault();
         console.log(order)
@@ -25,6 +26,7 @@ const Request = ({postOrder}) => {
             order: order,
             comment: comment
         };
+
 
         postOrder(newOrder).then(() => {
             alert('thanks for your submission')
@@ -60,41 +62,50 @@ const Request = ({postOrder}) => {
         };
 
         setOrder(newArr);
-    }
+    };
+
+    useEffect(() => {
+        let count = 0;
+        order.map((order) => {
+            count += order.count;
+        })
+        setItemCount(count);
+    }, [order])
 
     //seeding classic flavors
     const classicFlavors = [
         {
-            name: 'flavor1', 
+            name: 'HazelNut + tella - HazelNut + tella', 
             price:30,
             img: quad1
         },
         {
-            name: 'flavor2', 
+            name: 'Matcha Madness - Matcha Madness', 
             price:20,
             img: quad1
         },
         {
-            name: 'flavor3', 
+            name: 'Purple Yam - Purple Yam', 
             price:40,
             img: quad1
         },
         {
-            name: 'flavor4', 
+            name: 'Durian Fun - Durian Fun', 
             price:30,
             img: quad1
         },
         {
-            name: 'flavor5', 
+            name: 'SeaSalt Caramel - SeaSalt Caramel', 
             price:35,
             img: quad1
         },
         {
-            name: 'flavor6', 
+            name: 'Oreo Mix - Oreo Mix', 
             price:40,
             img: quad1
         }
     ];
+
 
     return(
         <div className='request_container'>
@@ -110,9 +121,15 @@ const Request = ({postOrder}) => {
                             <div className='menu_list' key={i}>
                                 <img alt="" src={flavor.img} className='q1'/>
                                 <div className='item_and_price'>
-                                    <p>{flavor.name}</p>
-                                    <p>${flavor.price}</p>
-                                    <input type="button" value='ADD' onClick={() => handleOrder(flavor.name, flavor.price)}/>
+                                    <p className='flavor_name'>{flavor.name}</p>
+                                    <div className='price_add'>
+                                        <div>
+                                            <p className='price_list'>${flavor.price}</p>
+                                        </div>
+                                        <div>
+                                            <button type='submit' onClick={() => handleOrder(flavor.name, flavor.price)} className='add_button'>+</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )
@@ -127,20 +144,45 @@ const Request = ({postOrder}) => {
                             My Order
                         </div>
                         <div>
-                            (0 items)
+                            ({itemCount} items)
                         </div>
                     </div>
 
+                    {order.length ? 
+                        <div className='menu-topSec2'>
+                            <div className='menu-direction2'>
+                                {order.map((order, i) => {
+                                    return(
+                                        <div key={i} className='list_container'>
+                                            <div className='list_left_sec'>
+                                                <div>
+                                                    {order.count}
+                                                </div>      
+                                                <div className='x-separator'>&nbsp; &times; &nbsp;</div>            
+                                                <div className='flavor_name_cart'>
+                                                    {order.name}
+                                                </div>
+                                            </div>
 
-                    <div className='menu-topSec'>
-                        <div>
-                            <img alt="" src={menu} className='menu_img'/>
+                                            <div>
+                                                ${order.priceEach}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div> 
+                    :
+                        <div className='menu-topSec'>
+                            <div>
+                                <img alt="" src={menu2} className='menu_img'/>
+                            </div>
+                            <div className='menu-direction'>
+                                <p>Order is empty.</p>
+                                <p>Browse our menu and start adding items.</p>
+                            </div>
                         </div>
-                        <div className='menu-direction'>
-                            <p>Order is empty.</p>
-                            <p>Browse our menu and start adding items.</p>
-                        </div>
-                    </div>
+                    }
 
                     <div className='subtotal-topSec'>
                         <div>

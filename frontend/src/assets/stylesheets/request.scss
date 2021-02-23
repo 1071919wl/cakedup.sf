@@ -49,10 +49,38 @@
                 .item_and_price{
                     background-color: orange;
                     display:flex;
+                    flex-direction: column;
                     justify-content: space-between;
                     width: 240px;
                     // flex-direction: column;
 
+                    .flavor_name{
+                        white-space: nowrap;
+                        // width: 100px;
+                        background-color: green;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .price_add{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        
+                        .price_list {
+                            margin-left: 4px;
+                        }
+
+                        .add_button {
+                            font-size: 22px;
+                            margin-right: 4px;
+                            // text-align: center;
+                            opacity: 0.5;
+                        }
+                        .add_button:hover {
+                            opacity: 1;
+                        }
+                    }
                 }
 
             }
@@ -109,9 +137,50 @@
 
                 .menu-direction{
                     text-align: center;
+
                 }
 
             }
+
+
+            .menu-topSec2 {
+                display: flex;
+                flex-direction: column;
+                //   margin-left: auto;
+                //   margin-right: auto;
+                // align-items: center;
+                width: 100%;
+                height: 250px;
+
+                .menu-direction2 {
+
+
+
+                    .list_container {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-left: 15px;
+                        margin-right: 15px;
+
+                        .list_left_sec{
+                            display: flex;
+
+                            .flavor_name_cart{
+                                white-space: nowrap;
+                                width: 155px;
+                                // background-color: green;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+
+
+                        }
+
+                    }
+                }
+
+            }
+
             .menu_form{
                 display: flex;
                 flex-direction:column;
@@ -173,6 +242,12 @@
         .menu_form_container{
             margin-bottom: 20px;
             width: initial !important;
+
+            .flavor_name_cart{
+                width: 235px !important;
+
+            }
+            
         }
     
     }
