@@ -13,6 +13,7 @@ const Request = ({postOrder}) => {
     const [order, setOrder] = useState([]);
     const [comment, setComment] = useState("");
     const [itemCount, setItemCount] = useState(0);
+    const [subtotal, setSubtotal] = useState(0);
 
     //sents order information to database
     const submitRequest = (e) => {
@@ -23,10 +24,9 @@ const Request = ({postOrder}) => {
             name: name,
             phone: phone,
             date: date,
-            order: order,
+            request: order,
             comment: comment
         };
-
 
         postOrder(newOrder).then(() => {
             alert('thanks for your submission')
@@ -37,70 +37,102 @@ const Request = ({postOrder}) => {
     const handleOrder = (flavor, price) => {
 
         let newOrder = {
-            name: flavor,
+            flavor: flavor,
             count: 1,
             priceEach: price
         };
 
         let match = false;
+        let dup = [...order];
         let newArr = [];
 
-        for(let i = 0; i < order.length; i ++){
-            if( order[i].name === flavor ){
-                order[i].count += 1;
-                newArr.push(order[i]);
+        for(let i = 0; i < dup.length; i ++){
+            if( dup[i].flavor === flavor ){
+                dup[i].count += 1;
+                newArr.push(dup[i]);
                 match = true;
             }else{
-                newArr.push(order[i]);
+                newArr.push(dup[i]);
             };
 
         }
         
         if( match === false){
             newArr.length = 0;
-            newArr.push(...order, newOrder);
+            newArr.push(...dup, newOrder);
         };
 
         setOrder(newArr);
     };
 
+
+    //remove item from cart
+    const removeOrder = (flavor) => {
+        
+        let newArr = [...order];
+
+        for(let i = 0; i < newArr.length; i ++){
+            if( newArr[i].flavor === flavor ){
+                if(newArr[i].count > 1){
+                    newArr[i].count -= 1;
+                }else if (newArr[i].count === 1){
+                    newArr.splice(i, 1);
+                }
+            };
+        };
+
+        setOrder(newArr);
+    };
+
+
+    
+
+    //updates item count and subtotal amount
     useEffect(() => {
+
         let count = 0;
+        let subtotal = 0;
+
         order.map((order) => {
             count += order.count;
+            subtotal += (order.count * order.priceEach);
         })
         setItemCount(count);
+        setSubtotal(subtotal);
+
+
+
     }, [order])
 
     //seeding classic flavors
     const classicFlavors = [
         {
-            name: 'HazelNut + tella - HazelNut + tella', 
+            flavor: 'HazelNut + tella - HazelNut + tella', 
             price:30,
             img: quad1
         },
         {
-            name: 'Matcha Madness - Matcha Madness', 
+            flavor: 'Matcha Madness - Matcha Madness', 
             price:20,
             img: quad1
         },
         {
-            name: 'Purple Yam - Purple Yam', 
+            flavor: 'Purple Yam - Purple Yam', 
             price:40,
             img: quad1
         },
         {
-            name: 'Durian Fun - Durian Fun', 
+            flavor: 'Durian Fun - Durian Fun', 
             price:30,
             img: quad1
         },
         {
-            name: 'SeaSalt Caramel - SeaSalt Caramel', 
+            flavor: 'SeaSalt Caramel - SeaSalt Caramel', 
             price:35,
             img: quad1
         },
         {
-            name: 'Oreo Mix - Oreo Mix', 
+            flavor: 'Oreo Mix - Oreo Mix', 
             price:40,
             img: quad1
         }
@@ -121,13 +153,13 @@ const Request = ({postOrder}) => {
                             <div className='menu_list' key={i}>
                                 <img alt="" src={flavor.img} className='q1'/>
                                 <div className='item_and_price'>
-                                    <p className='flavor_name'>{flavor.name}</p>
+                                    <p className='flavor_name'>{flavor.flavor}</p>
                                     <div className='price_add'>
                                         <div>
                                             <p className='price_list'>${flavor.price}</p>
                                         </div>
                                         <div>
-                                            <button type='submit' onClick={() => handleOrder(flavor.name, flavor.price)} className='add_button'>+</button>
+                                            <button type='submit' onClick={() => handleOrder(flavor.flavor, flavor.price)} className='add_button'>+</button>
                                         </div>
                                     </div>
                                 </div>
@@ -160,12 +192,20 @@ const Request = ({postOrder}) => {
                                                 </div>      
                                                 <div className='x-separator'>&nbsp; &times; &nbsp;</div>            
                                                 <div className='flavor_name_cart'>
-                                                    {order.name}
+                                                    {order.flavor}
                                                 </div>
                                             </div>
 
                                             <div>
                                                 ${order.priceEach}
+                                            </div>
+                                            <div className='add_min_container'>
+                                                <div>
+                                                    <button type='submit' onClick={() => handleOrder(order.flavor, order.price)} className='add_button2'>+</button>
+                                                </div>
+                                                <div>
+                                                    <button type='submit' onClick={() => removeOrder(order.flavor)} className='minus_button'>-</button>
+                                                </div>
                                             </div>
                                         </div>
                                     );
@@ -189,7 +229,7 @@ const Request = ({postOrder}) => {
                             Subtotal
                         </div>
                         <div>
-                            (0 items)
+                            ${subtotal}
                         </div>
                     </div>
 

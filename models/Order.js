@@ -15,11 +15,15 @@ const OrderSchema = new Schema({
         default: Date.now,
         required: true
     },
+    request:[{
+        flavor: String,
+        count: Number,
+        priceEach: Number,
+        // required: true
+    }],
     comment:{
         type: String
     }
-
-
 });
 
 const Order = mongoose.model('Order', OrderSchema);

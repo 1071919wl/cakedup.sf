@@ -85,7 +85,7 @@ const MainPage = (props) => {
 
             <Parallax bgImage={mainSec2} bgImageStyle={{top: '-23%'}} strength={400} className='parallax_container'>
 
-                <div className='title_container' style={{height: 480}}>
+                <div className='title_container' style={{height: 500}}>
                     <h1 className='cake_type'>-  BASQUE CHEESECAKES  -</h1>
                     <h1 className='brand-name'>Cakedup.sf</h1>
                 </div>

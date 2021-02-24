@@ -24,6 +24,10 @@ module.exports = function validateOrderInput(data){
         errors.date = 'Please select a pick up date'
     }
 
+    // if(!Validator.isLength(data.request.length, {min: 1})){
+    //     errors.date = 'Cart must have at least 1 item'
+    // }
+
     return {
         errors,
         isValid: Object.keys(errors).length === 0

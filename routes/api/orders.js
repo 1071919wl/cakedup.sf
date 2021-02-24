@@ -27,6 +27,7 @@ router.post("/",
             name: req.body.name,
             phone: req.body.phone,
             date: req.body.date,
+            request: req.body.request,
             comment: req.body.comment
         });
 
