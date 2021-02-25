@@ -14,6 +14,7 @@ const Request = ({postOrder, errors, removeOrderErrors}) => {
     const [comment, setComment] = useState("");
     const [itemCount, setItemCount] = useState(0);
     const [subtotal, setSubtotal] = useState(0);
+    const [sent, setSent] = useState(false);
 
     //sents order information to database
     const submitRequest = (e) => {
@@ -28,10 +29,17 @@ const Request = ({postOrder, errors, removeOrderErrors}) => {
         };
 
         postOrder(newOrder).then(() => {
-            console.log('saved')
+            console.log(errors)
+            setSent(true);
         });
         
     }
+
+    //Close modal and clean errors after submission
+    useEffect(()=>{
+        // document.getElementById("modal_exit_button").click();
+        // removeOrderErrors();
+    },[sent])
 
     //updates order state with what's in cart
     const handleOrder = (flavor, price) => {
