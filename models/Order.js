@@ -19,12 +19,12 @@ const OrderSchema = new Schema({
         flavor: String,
         count: Number,
         priceEach: Number,
-        // required: true
     }],
     comment:{
         type: String
     }
 });
+
 
 const Order = mongoose.model('Order', OrderSchema);
 module.exports = Order;

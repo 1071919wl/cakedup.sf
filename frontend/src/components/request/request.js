@@ -5,7 +5,7 @@ import '../../assets/stylesheets/request.scss';
 import quad1 from '../../assets/images/quad/q1.jpg';
 import menu2 from '../../assets/images/request/menu2.png';
 
-const Request = ({postOrder}) => {
+const Request = ({postOrder, errors, removeOrderErrors}) => {
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState('');
@@ -18,7 +18,6 @@ const Request = ({postOrder}) => {
     //sents order information to database
     const submitRequest = (e) => {
         e.preventDefault();
-        console.log(order)
 
         let newOrder = {
             name: name,
@@ -29,8 +28,9 @@ const Request = ({postOrder}) => {
         };
 
         postOrder(newOrder).then(() => {
-            alert('thanks for your submission')
+            console.log('saved')
         });
+        
     }
 
     //updates order state with what's in cart
@@ -85,8 +85,6 @@ const Request = ({postOrder}) => {
     };
 
 
-    
-
     //updates item count and subtotal amount
     useEffect(() => {
 
@@ -100,9 +98,12 @@ const Request = ({postOrder}) => {
         setItemCount(count);
         setSubtotal(subtotal);
 
-
-
     }, [order])
+
+    //clear error messages
+    useEffect(() => {
+        removeOrderErrors();
+    },[])
 
     //seeding classic flavors
     const classicFlavors = [
@@ -256,6 +257,13 @@ const Request = ({postOrder}) => {
                         </div>
 
                     </form>
+                    {errors.map((err,i) => {
+                        return (
+                            <div key={i} className='error_message'>
+                                {err}
+                            </div>
+                        )
+                    })}
                 </div>
             
             </div>

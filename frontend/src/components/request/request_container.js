@@ -1,18 +1,20 @@
 import { connect } from 'react-redux';
-import { postOrder } from '../../actions/order_actions';
+import { postOrder, removeOrderErrors } from '../../actions/order_actions';
 import Request from './request';
 
 
 const mapStateToProps = state => {
     // console.log(state.entities.orders, 'container')
     return {
-        orders: state.entities.orders
+        orders: state.entities.orders,
+        errors: Object.values(state.errors.order)
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        postOrder: (newOrder) => dispatch(postOrder(newOrder))
+        postOrder: (newOrder) => dispatch(postOrder(newOrder)),
+        removeOrderErrors: () => dispatch(removeOrderErrors())
     }
 }
 

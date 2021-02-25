@@ -24,9 +24,9 @@ module.exports = function validateOrderInput(data){
         errors.date = 'Please select a pick up date'
     }
 
-    // if(!Validator.isLength(data.request.length, {min: 1})){
-    //     errors.date = 'Cart must have at least 1 item'
-    // }
+    if(data.request.length < 1){
+        errors.request = 'Cart must contain an item'
+    }
 
     return {
         errors,
