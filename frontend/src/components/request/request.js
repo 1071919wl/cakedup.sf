@@ -5,7 +5,7 @@ import '../../assets/stylesheets/request.scss';
 import quad1 from '../../assets/images/quad/q1.jpg';
 import menu2 from '../../assets/images/request/menu2.png';
 
-const Request = ({postOrder, errors, removeOrderErrors}) => {
+const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState('');
@@ -14,7 +14,6 @@ const Request = ({postOrder, errors, removeOrderErrors}) => {
     const [comment, setComment] = useState("");
     const [itemCount, setItemCount] = useState(0);
     const [subtotal, setSubtotal] = useState(0);
-    const [sent, setSent] = useState(false);
 
     //sents order information to database
     const submitRequest = (e) => {
@@ -28,18 +27,22 @@ const Request = ({postOrder, errors, removeOrderErrors}) => {
             comment: comment
         };
 
-        postOrder(newOrder).then(() => {
-            console.log(errors)
-            setSent(true);
+        postOrder(newOrder).then((res) => {
+            // console.log(errors2.name)
+            if(res.type !== "RECEIVE_ORDER_ERRORS"){
+                submitCleanUp();
+            }
         });
         
     }
 
     //Close modal and clean errors after submission
-    useEffect(()=>{
-        // document.getElementById("modal_exit_button").click();
-        // removeOrderErrors();
-    },[sent])
+    const submitCleanUp = () => {
+        if(errors.length){
+            document.getElementById("modal_exit_button").click();
+            removeOrderErrors();
+        }
+    }
 
     //updates order state with what's in cart
     const handleOrder = (flavor, price) => {
@@ -247,31 +250,44 @@ const Request = ({postOrder, errors, removeOrderErrors}) => {
                         <label>Name:
                             <input type='text' value={name} onChange={e => setName(e.target.value)}/>
                         </label>
+                            <div className='error_message'>
+                                {errors2.name}
+                            </div>
 
                         <label>Phone:
                             <input type='text' value={phone} onChange={e => setPhone(e.target.value)}/>
                         </label>
+                            <div className='error_message'>
+                                {errors2.phone}
+                            </div>
 
                         <label>Date:
                             <input type="date" value={date} onChange={e => setDate(e.target.value)}/>
                         </label>
+                            <div className='error_message'>
+                                {errors2.date}
+                            </div>
 
                         <label>Special requests
                             <textarea type='text' value={comment} onChange={e => setComment(e.target.value)} />
                         </label>
+
+                            <div className='error_message'>
+                                {errors2.request}
+                            </div>
 
                         <div className ='submit_container'>
                             <input type='submit' value='Submit Order' className='order_submit'/>
                         </div>
 
                     </form>
-                    {errors.map((err,i) => {
+                    {/* {errors.map((err,i) => {
                         return (
                             <div key={i} className='error_message'>
                                 {err}
                             </div>
                         )
-                    })}
+                    })} */}
                 </div>
             
             </div>

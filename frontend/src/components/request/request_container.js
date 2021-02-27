@@ -4,10 +4,11 @@ import Request from './request';
 
 
 const mapStateToProps = state => {
-    // console.log(state.entities.orders, 'container')
+    // console.log(state.errors.orders, 'container')
     return {
         orders: state.entities.orders,
-        errors: Object.values(state.errors.order)
+        errors: Object.values(state.errors.order),
+        errors2: state.errors.order
     }
 };
 
