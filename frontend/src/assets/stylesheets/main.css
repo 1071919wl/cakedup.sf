@@ -60,6 +60,11 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     z-index: -1;
 }
 
+.parallax_last_container {
+    z-index: -1;
+    /* opacity: 0.75; */
+
+}
 
 
 /*! ========================== mobile section */
@@ -78,15 +83,31 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
-    transform: translate(0%, 25%);
+    transform: translate(0%, 30%);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.sfChronicle_aTag{
+    /* z-index: 5; */
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    max-width: 500px;
+    transform: translate(0%, -440%);
+    /* background-color: blue; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 .sfChronicle{
     height: auto;
     width: 500px;
+    
 }
 
 
@@ -251,7 +272,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     sans-serif;
     font-size: 20px;
     color: white;
-    margin-bottom: 50px;
+    /* margin-bottom: 40px; */
 }
 
 .end_sec_container {

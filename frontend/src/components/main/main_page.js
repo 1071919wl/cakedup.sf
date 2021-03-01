@@ -44,9 +44,14 @@ const MainPage = (props) => {
         elmnt.scrollIntoView({
             behavior: 'smooth'
         });
-
     };
 
+    const aTagClick = () => {
+        let elmnt = document.getElementsByClassName("parallax_last_container");
+        console.log(elmnt)
+    };
+
+    
 
     return (
         <div className='main_container'>
@@ -135,15 +140,23 @@ const MainPage = (props) => {
                 </div>
             </div>
 
-            <Parallax bgImage={cakeSplash2} bgImageStyle={{top: '-20%'}} strength={400} className='parallax_container'>
+            <Parallax bgImage={cakeSplash2} bgImageStyle={{top: '-20%'}} strength={400} blur={3} className='parallax_last_container' onClick={()=>aTagClick()}>
 
-                <div className='news_container' style={{height: 550}}>
-                    <h1 className='in_the_news'>Cakedup.sf in the news</h1>
+                <div className='news_container' style={{height: 550}} >
+                    <h1 className='in_the_news' >Cakedup.sf in the news</h1>
                     <div>
-                        <img alt="" src={sfChronicle} className='sfChronicle'/>
+                        {/* <a className='sfChronicle_aTag'  href='https://www.sfchronicle.com/restaurants/article/It-s-not-just-Basuku-Bay-Area-bakers-can-t-15983394.php'>
+                            <img alt="sfChronicle" src={sfChronicle} className='sfChronicle' />
+                        </a> */}
                     </div>
                 </div>
             </Parallax>
+
+            <a className='sfChronicle_aTag'  href='https://www.sfchronicle.com/restaurants/article/It-s-not-just-Basuku-Bay-Area-bakers-can-t-15983394.php'>
+                <div>
+                    <img alt="sfChronicle" src={sfChronicle} className='sfChronicle' />
+                </div>
+            </a>
 
 
             <div className ='end_sec_container' id="end_contact" >
