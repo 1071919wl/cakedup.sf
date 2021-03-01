@@ -140,7 +140,7 @@ const MainPage = (props) => {
                 </div>
             </div>
 
-            <Parallax bgImage={cakeSplash2} bgImageStyle={{top: '-20%'}} strength={400} blur={3} className='parallax_last_container' onClick={()=>aTagClick()}>
+            <Parallax bgImage={cakeSplash2} bgImageStyle={{top: '-20%'}} strength={400} blur={4} className='parallax_last_container' >
 
                 <div className='news_container' style={{height: 550}} >
                     <h1 className='in_the_news' >Cakedup.sf in the news</h1>
@@ -152,11 +152,24 @@ const MainPage = (props) => {
                 </div>
             </Parallax>
 
-            <a className='sfChronicle_aTag'  href='https://www.sfchronicle.com/restaurants/article/It-s-not-just-Basuku-Bay-Area-bakers-can-t-15983394.php'>
-                <div>
+            <div className='sfChronicle_aTag'>
+                <div className="arrow-button-left">{"<"}</div>
+                <a className='sfChronicle_aTag2'  href='https://www.sfchronicle.com/restaurants/article/It-s-not-just-Basuku-Bay-Area-bakers-can-t-15983394.php'>
+                    
                     <img alt="sfChronicle" src={sfChronicle} className='sfChronicle' />
-                </div>
-            </a>
+                    
+                    {/* <div>
+                        <img alt="sfChronicle" src={sfChronicle} className='sfChronicle' />
+                    </div>
+                    <div>
+                        <img alt="sfChronicle" src={sfChronicle} className='sfChronicle' />
+                    </div>
+                    <div>
+                        <img alt="sfChronicle" src={sfChronicle} className='sfChronicle' />
+                    </div> */}
+                </a>
+                <div className="arrow-button-right">{">"}</div>
+            </div>
 
 
             <div className ='end_sec_container' id="end_contact" >
