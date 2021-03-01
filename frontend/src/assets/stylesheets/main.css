@@ -20,6 +20,35 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     margin-left: 100px;
 }
 
+#home{
+    margin-right: 10px;
+    font-size: 23px;
+    font-family: 'Nunito Sans',
+    sans-serif;
+}
+
+.contact_button{
+    margin-left: 10px;
+    font-size: 23px;
+    font-family: 'Nunito Sans',
+    sans-serif;
+}
+
+#home:hover,
+.contact_button:hover {
+    cursor: pointer;
+}
+
+.menu_button{
+    font-size: 23px;
+    font-family: 'Nunito Sans',
+    sans-serif;
+}
+
+.menu_button:hover{
+    cursor: pointer;
+}
+
 .instagram{
     height: auto;
     width: 30px;
@@ -29,8 +58,8 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 .parallax_container{
     z-index: -1;
-
 }
+
 
 
 /*! ========================== mobile section */
@@ -44,6 +73,21 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     transform: translate(0%, 40%);
 }
 
+.news_container {
+    /* background-color:#e5e5e5; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    transform: translate(0%, 25%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sfChronicle{
+    height: auto;
+    width: 500px;
+}
 
 
 .cake_type{
@@ -132,7 +176,8 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
 .endSecPic_container{
     display:flex;
-    max-height: 500px;
+    justify-content: space-evenly;
+    max-height: 450px;
     margin-right: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -145,7 +190,7 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 .endSec1,
 .endSec2 {
     height: auto;
-    width: 180px;
+    width: 150px;
 }
 
 .main-gurl-img{
@@ -154,21 +199,6 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     width: 80%;
     /* height: auto;
     object-fit: contain; */
-}
-
-
-
-.end_sec_container{
-    overflow:auto;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-
-    color: white;
-    background-color: rgba(14, 13, 13, 0.924);
-    /* box-shadow: 0 0 25px rgb(26, 25, 25); */
 }
 
 
@@ -215,6 +245,56 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 }
 
 /*! QUAD4 IMG SEC END*/
+
+.in_the_news{
+    font-family: 'Nunito Sans',
+    sans-serif;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.end_sec_container {
+    overflow: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background-color: rgba(14, 13, 13, 0.924);
+    /* box-shadow: 0 0 25px rgb(26, 25, 25); */
+
+}
+
+.collab_info_container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.collab_option{
+    margin-bottom: 20px;
+}
+
+.contact_for_collab{
+    font-family: 'Nunito Sans',
+    sans-serif;
+    font-size: 14px;
+}
+
+.mobile-contact_collab{
+    display:none;
+}
+
+.collab_underline{
+      border-top: 1px solid white;
+      width: 150px;
+      margin-top: 20px;
+}
+
 
 
 .copyRight{
@@ -289,6 +369,22 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
     .about_gurl_container,
     .end_sec_container {
         display: block;
+    }
+    
+    .endSecPic_container {
+        display: none;
+    }
+
+    .contact_for_collab {
+        display: none;
+    }
+
+    .mobile-contact_collab{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        
     }
 
     .about_gurl_info p {
