@@ -425,6 +425,8 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
         flex-direction: column;
         text-align: center;
         align-items: center;
+        font-family: 'Nunito Sans',
+        sans-serif;
         
     }
 
@@ -446,11 +448,18 @@ https: //1stwebdesigner.com/outstanding-scroll-and-parallax-css-effects/ */
 
     .sfChronicle {
         height: auto;
-        width: 300px;
+        width: 240px;
     }
 
     .sfChronicle_aTag {
-        transform: translate(0%, -700%);
+        transform: translate(0%, -530%);
        
+    }
+    .arrow-button-right{
+        margin-left: 10px;
+    }
+
+    .arrow-button-left {
+        margin-right: 10px;
     }
 }

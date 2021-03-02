@@ -185,11 +185,11 @@ const MainPage = (props) => {
                     </div>
 
                     <div className='contact_for_collab'>
-                        <div><a href='https://www.instagram.com/cakedup.sf/'>@CAKEDUPSF</a> / <a href="mailto:alicehuu@gmail.com">ALICEHUU@GMAIL.CO</a> / TEXT: 650-303-8393 </div>
+                        <div><a href='https://www.instagram.com/cakedup.sf/'>IG:@CAKEDUPSF</a> / <a href="mailto:alicehuu@gmail.com">ALICEHUU@GMAIL.COM</a> / TEXT: 650-303-8393 </div>
                     </div>
 
                     <div className="mobile-contact_collab"> 
-                        <a href='https://www.instagram.com/cakedup.sf/'>@CAKEDUPSF</a>
+                        <a href='https://www.instagram.com/cakedup.sf/'>IG:@CAKEDUPSF</a>
                         <p>ALICEHUU@GMAIL.COM </p>
                         <p>TEXT: 650-303-8393 </p>
                     </div>
