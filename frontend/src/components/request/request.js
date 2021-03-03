@@ -20,6 +20,10 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
     const [itemCount, setItemCount] = useState(0);
     const [subtotal, setSubtotal] = useState(0);
 
+    //!date
+    const [selectedDay, setSelectedDay] = useState({selectedDay: null});
+    //!date
+
     //sents order information to database
     const submitRequest = (e) => {
         e.preventDefault();
@@ -121,6 +125,21 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
         removeOrderErrors();
     },[])
 
+
+    //!calendar
+    const handleDayClick = (day, { selected }) => {
+        
+        
+        let obj = {
+            selectedDay: day
+        }
+        setSelectedDay(obj);
+        console.log(selectedDay.selectedDay)
+        console.log(date)
+    }
+    //!calendar
+
+
     //seeding classic flavors
     const classicFlavors = [
         {
@@ -161,7 +180,26 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
             <h1 className='request_title'>Menu</h1>
             <h2 className='classic_options'>Classic Flavors</h2>
 
-            <DayPicker />
+            <DayPicker 
+                canChangeMonth={false} 
+                // fixedWeeks //shows 6 week each month
+                selectedDays={selectedDay.selectedDay}
+                onDayClick={handleDayClick}
+                disabledDays={[
+                    new Date(2021, 2, 12),
+                    new Date(2021, 2, 2),
+                    {
+                    after: new Date(2021, 2, 20),
+                    before: new Date(2021, 2, 25),
+                    },
+                ]}     
+            />
+            <p>
+                {selectedDay.selectedDay != null
+                ? selectedDay.selectedDay.toLocaleDateString()
+                : 'Please select a day 👻'}
+            </p>
+
             <div className='menu_container'>
 
                 <div className='menu_img_sec'>
