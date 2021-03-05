@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 
 import '../../assets/stylesheets/request.scss';
 
@@ -8,6 +8,8 @@ import menu2 from '../../assets/images/request/menu2.png';
 //!test
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+
+// import OrdersReducer from '../../reducers/orders_reducer';
 //!test
 
 const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
@@ -24,6 +26,10 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
     const [selectedDay, setSelectedDay] = useState({selectedDay: null});
     //!date
 
+    //!useReducer
+    // const [state, dispatch] = useReducer(OrdersReducer);
+    //!useReducer
+
     //sents order information to database
     const submitRequest = (e) => {
         e.preventDefault();
@@ -35,7 +41,7 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
             request: order,
             comment: comment
         };
-
+        
         postOrder(newOrder).then((res) => {
             // console.log(errors2.name)
             if(res.type !== "RECEIVE_ORDER_ERRORS"){
@@ -129,14 +135,13 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
     //!calendar
     const handleDayClick = (day, { selected }) => {
         
-        
         let obj = {
             selectedDay: day
         }
         setSelectedDay(obj);
-        console.log(selectedDay.selectedDay)
-        console.log(date)
+        
     }
+
     //!calendar
 
 
@@ -192,6 +197,9 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
                     after: new Date(2021, 2, 20),
                     before: new Date(2021, 2, 25),
                     },
+                    {
+                    before: new Date()
+                    }
                 ]}     
             />
             <p>
