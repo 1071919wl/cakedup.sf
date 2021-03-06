@@ -6,7 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import MainPageContainer from './main/main_page_container';
 // import NavBarContainer from './nav/navbar_container';
 import LoginFormContainer from './session/login_form_container';
-import OrderFormContainer from './order/order_container';
+import Order from './order/order';
 import ScrollToTop from './ScrollToTop.js';
 import '../assets/stylesheets/reset.css';
 
@@ -18,7 +18,7 @@ const App = () => (
     <Route exact path="/" component={MainPageContainer} />
     <Switch>
       <AuthRoute exact path="/admin-login" component={LoginFormContainer} />
-      <ProtectedRoute exact path="/order" component={OrderFormContainer} />
+      <ProtectedRoute exact path="/order" component={Order} />
 
       {/* <Route exact path="/admin-login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileFormContainer} />

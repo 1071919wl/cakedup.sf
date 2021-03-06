@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect } from "react";
 
 import '../../assets/stylesheets/request.scss';
 
@@ -16,15 +16,12 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState('');
-    const [date, setDate] = useState('');
     const [order, setOrder] = useState([]);
     const [comment, setComment] = useState("");
     const [itemCount, setItemCount] = useState(0);
     const [subtotal, setSubtotal] = useState(0);
-
-    //!date
+    // const [date, setDate] = useState('');
     const [selectedDay, setSelectedDay] = useState({selectedDay: null});
-    //!date
 
     //!useReducer
     // const [state, dispatch] = useReducer(OrdersReducer);
@@ -37,13 +34,13 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
         let newOrder = {
             name: name,
             phone: phone,
-            date: date,
+            date: selectedDay.selectedDay,
             request: order,
             comment: comment
         };
-        
+
+
         postOrder(newOrder).then((res) => {
-            // console.log(errors2.name)
             if(res.type !== "RECEIVE_ORDER_ERRORS"){
                 submitCleanUp();
             }
@@ -53,7 +50,7 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
 
     //Close modal and clean errors after submission
     const submitCleanUp = () => {
-        if(errors.length){
+        if(!errors2.length){
             document.getElementById("modal_exit_button").click();
             removeOrderErrors();
         }
@@ -133,15 +130,17 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
 
 
     //!calendar
-    const handleDayClick = (day, { selected }) => {
+    const handleDayClick = (day, modifiers = {}) => {
+        if (modifiers.disabled) {
+            return; 
+        }
         
         let obj = {
-            selectedDay: day
+            selectedDay: modifiers.selected ? undefined : day,
         }
         setSelectedDay(obj);
         
     }
-
     //!calendar
 
 
@@ -184,29 +183,6 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
         <div className='request_container'>
             <h1 className='request_title'>Menu</h1>
             <h2 className='classic_options'>Classic Flavors</h2>
-
-            <DayPicker 
-                canChangeMonth={false} 
-                // fixedWeeks //shows 6 week each month
-                selectedDays={selectedDay.selectedDay}
-                onDayClick={handleDayClick}
-                disabledDays={[
-                    new Date(2021, 2, 12),
-                    new Date(2021, 2, 2),
-                    {
-                    after: new Date(2021, 2, 20),
-                    before: new Date(2021, 2, 25),
-                    },
-                    {
-                    before: new Date()
-                    }
-                ]}     
-            />
-            <p>
-                {selectedDay.selectedDay != null
-                ? selectedDay.selectedDay.toLocaleDateString()
-                : 'Please select a day 👻'}
-            </p>
 
             <div className='menu_container'>
 
@@ -313,8 +289,31 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
                             </div>
 
                         <label>Date:
-                            <input type="date" value={date} onChange={e => setDate(e.target.value)}/>
+                            {/* <input type="date" value={date} onChange={e => setDate(e.target.value)}/> */}
+                            <DayPicker 
+                                canChangeMonth={false} 
+                                // fixedWeeks //shows 6 week each month
+                                selectedDays={selectedDay.selectedDay}
+                                onDayClick={handleDayClick}
+                                disabledDays={[
+                                    new Date(2021, 2, 12),
+                                    new Date(2021, 2, 2),
+                                    {
+                                    after: new Date(2021, 2, 20),
+                                    before: new Date(2021, 2, 25),
+                                    },
+                                    {
+                                    before: new Date()
+                                    }
+                                ]}     
+                            />
+                            <p>
+                                {selectedDay.selectedDay != null
+                                ? selectedDay.selectedDay.toLocaleDateString()
+                                : 'Please select from available pick up day'}
+                            </p>
                         </label>
+
                             <div className='error_message'>
                                 {errors2.date}
                             </div>

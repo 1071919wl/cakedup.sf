@@ -3,21 +3,28 @@ import React, { useState, useRef, useEffect } from "react";
 
 import NavBarContainer from '../nav/navbar_container';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchOrders } from '../../actions/order_actions';
+
 const Order = (props) => {
 
+    const totalOrders = useSelector(state => state.entities.orders)
+    const dispatch = useDispatch()
+
     useEffect(() => {
-        props.fetchOrders()
+        // props.fetchOrders()
+        dispatch(fetchOrders())
     }, [])
 
     function ordersList(){
         let orders = null;
-        orders = props.orders.length ? props.orders : null
+        orders = totalOrders.length ? totalOrders : null
 
         return orders === null ? 
                 <div></div>
         :
                 <ul>
-                   {props.orders.map((order, i) => (
+                   {totalOrders.map((order, i) => (
                         <li key={i}>
                             {order.name}
                             {order.phone}
