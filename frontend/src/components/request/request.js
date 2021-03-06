@@ -6,9 +6,8 @@ import quad1 from '../../assets/images/quad/q1.jpg';
 import menu2 from '../../assets/images/request/menu2.png';
 
 //!test
-import DayPicker from 'react-day-picker';
+import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
-
 // import OrdersReducer from '../../reducers/orders_reducer';
 //!test
 
@@ -130,6 +129,26 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
 
 
     //!calendar
+
+    const disabledDays = [
+        new Date(2021, 2, 1), // mar, 15
+        new Date(2021, 2, 2), 
+        new Date(2021, 2, 3), 
+        new Date(2021, 2, 5),
+        new Date(2021, 2, 6), 
+        new Date(2021, 2, 7), 
+        new Date(2021, 2, 8), 
+        new Date(2021, 2, 10), 
+        new Date(2021, 2, 30), 
+    ]
+
+    function isDayDisabled(day) {
+        return !disabledDays.some(disabledDay => 
+            DateUtils.isSameDay(day, disabledDay)
+        )
+    }
+    
+
     const handleDayClick = (day, modifiers = {}) => {
         if (modifiers.disabled) {
             return; 
@@ -288,7 +307,7 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
                                 {errors2.phone}
                             </div>
 
-                        <label>Date:
+                        <label>Pick Up Date:
                             {/* <input type="date" value={date} onChange={e => setDate(e.target.value)}/> */}
                             <DayPicker 
                                 canChangeMonth={false} 
@@ -296,21 +315,16 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
                                 selectedDays={selectedDay.selectedDay}
                                 onDayClick={handleDayClick}
                                 disabledDays={[
-                                    new Date(2021, 2, 12),
-                                    new Date(2021, 2, 2),
-                                    {
-                                    after: new Date(2021, 2, 20),
-                                    before: new Date(2021, 2, 25),
-                                    },
+                                    isDayDisabled,     
                                     {
                                     before: new Date()
                                     }
-                                ]}     
+                                ]}
                             />
                             <p>
                                 {selectedDay.selectedDay != null
                                 ? selectedDay.selectedDay.toLocaleDateString()
-                                : 'Please select from available pick up day'}
+                                : 'Please select from available day'}
                             </p>
                         </label>
 
