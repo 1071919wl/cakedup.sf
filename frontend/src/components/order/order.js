@@ -25,10 +25,8 @@ const Order = (props) => {
         :
                 <ul>
                    {totalOrders.map((order, i) => (
-                        <li key={i}>
+                        <li key={order._id}>
                             {order.name}
-                            {order.phone}
-                            {order.date}
                         </li>
                     ))} 
                 </ul>

@@ -7,7 +7,7 @@ const Order = require('../../models/Order');
 router.get("/", (req, res) => {
     Order
         .find()
-        .sort({date: -1})
+        .sort({getDate: -1})
         .then(orders => res.json(orders))
         .catch(err => res.status(400).json(err));
 });
@@ -26,7 +26,7 @@ router.post("/",
         const newOrder = new Order({
             name: req.body.name,
             phone: req.body.phone,
-            date: req.body.date,
+            getDate: req.body.getDate,
             request: req.body.request,
             comment: req.body.comment
         });
@@ -59,8 +59,8 @@ router.patch("/:id", passport.authenticate('jwt',{session:false}), async (req, r
                 order.phone = req.body.phone
             }
 
-            if (req.body.date) {
-                order.date = req.body.date
+            if (req.body.getDate) {
+                order.getDate = req.body.getDate
             }
 
             if (req.body.comment) {

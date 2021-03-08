@@ -46,10 +46,10 @@ const MainPage = (props) => {
         });
     };
 
-    const aTagClick = () => {
-        let elmnt = document.getElementsByClassName("parallax_last_container");
-        console.log(elmnt)
-    };
+    // const aTagClick = () => {
+    //     let elmnt = document.getElementsByClassName("parallax_last_container");
+    //     console.log(elmnt)
+    // };
 
     
 

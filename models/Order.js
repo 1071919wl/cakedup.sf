@@ -10,7 +10,7 @@ const OrderSchema = new Schema({
         type: Number,
         required: true
     },
-    date:{
+    getDate:{
         type: Date,
         default: Date.now,
         required: true
@@ -23,7 +23,11 @@ const OrderSchema = new Schema({
     comment:{
         type: String
     }
-});
+},
+    {
+        timestamps: true
+    }
+);
 
 
 const Order = mongoose.model('Order', OrderSchema);

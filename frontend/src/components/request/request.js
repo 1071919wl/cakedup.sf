@@ -30,14 +30,28 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
     const submitRequest = (e) => {
         e.preventDefault();
 
+        let validPhone = []
+        let phoneDup = phone;
+
+        let validInt = { 
+            "1":true, "2":true, "3":true, "4":true, "5":true,
+            "6":true, "7":true, "8":true, "9":true, "0":true,
+        };
+
+        for( let i = 0; i < phoneDup.length; i ++ ){
+            if( validInt[phoneDup[i]] !== undefined ){
+                validPhone.push(phoneDup[i]);
+            }
+        }
+        let phoneStr = validPhone.join('');
+
         let newOrder = {
             name: name,
-            phone: phone,
-            date: selectedDay.selectedDay,
+            phone: phoneStr,
+            getDate: selectedDay.selectedDay,
             request: order,
             comment: comment
         };
-
 
         postOrder(newOrder).then((res) => {
             if(res.type !== "RECEIVE_ORDER_ERRORS"){
@@ -121,6 +135,34 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
         setSubtotal(subtotal);
 
     }, [order])
+
+
+    //!phone input formating
+    useEffect(() => {
+        
+        const formattedPhoneNumber = formatPhoneNumber(phone) 
+        setPhone(formattedPhoneNumber);
+
+    },[phone])
+
+    const formatPhoneNumber = (value) => {
+        if (!value) return value;
+
+        const phoneNumber = value.replace(/[^\d]/g, "");
+
+        const phoneNumberLength = phoneNumber.length;
+
+        if (phoneNumberLength < 4) return phoneNumber;
+
+        if (phoneNumberLength < 7) {
+            return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+        }
+
+        return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+    }
+
+
+
 
     //clear error messages
     useEffect(() => {
@@ -301,7 +343,7 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
                             </div>
 
                         <label>Phone:
-                            <input type='text' value={phone} onChange={e => setPhone(e.target.value)}/>
+                            <input type='text' value={phone} maxLength = "14" onChange={e => setPhone(e.target.value)}/>
                         </label>
                             <div className='error_message'>
                                 {errors2.phone}
@@ -329,7 +371,7 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
                         </label>
 
                             <div className='error_message'>
-                                {errors2.date}
+                                {errors2.getDate}
                             </div>
 
                         <label>Special requests

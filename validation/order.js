@@ -6,7 +6,7 @@ module.exports = function validateOrderInput(data){
 
     data.name = validText(data.name) ? data.name : '';
     data.phone = validText(data.phone) ? data.phone : '';
-    data.date = validText(data.date) ? data.date : '';
+    data.getDate = validText(data.getDate) ? data.getDate : '';
 
     if(Validator.isEmpty(data.name)){
         errors.name = 'Please tell us your name'
@@ -20,8 +20,20 @@ module.exports = function validateOrderInput(data){
         errors.phone = 'Please provide valid number'
     }
 
-    if(Validator.isEmpty(data.date)){
-        errors.date = 'Please select a pick up date'
+    //!covered by frontend regrex
+    // let validInt = { 
+    //     "1":true, "2":true, "3":true, "4":true, "5":true,
+    //     "6":true, "7":true, "8":true, "9":true, "0":true,
+    // };
+
+    // for( let i = 0; i < data.phone.length; i ++){
+    //     if( validInt[data.phone[i]] === undefined ){
+    //         errors.phone = 'Please provide numbers between "0-9"'
+    //     }
+    // }
+
+    if(Validator.isEmpty(data.getDate)){
+        errors.getDate = 'Please select a pick up date'
     }
 
     if(data.request.length < 1){
