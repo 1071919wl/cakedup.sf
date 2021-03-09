@@ -137,7 +137,7 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
     }, [order])
 
 
-    //!phone input formating
+    //phone input formating
     useEffect(() => {
         
         const formattedPhoneNumber = formatPhoneNumber(phone) 
@@ -163,7 +163,6 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
 
 
 
-
     //clear error messages
     useEffect(() => {
         removeOrderErrors();
@@ -173,13 +172,13 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
     //!calendar
 
     const disabledDays = [
-        new Date(2021, 2, 1), // mar, 15
-        new Date(2021, 2, 2), 
-        new Date(2021, 2, 3), 
-        new Date(2021, 2, 5),
-        new Date(2021, 2, 6), 
-        new Date(2021, 2, 7), 
-        new Date(2021, 2, 8), 
+        new Date(2021, 2, 16), // mar, 15
+        new Date(2021, 2, 20), 
+        new Date(2021, 2, 25), 
+        new Date(2021, 2, 15),
+        new Date(2021, 2, 21), 
+        new Date(2021, 2, 17), 
+        new Date(2021, 2, 18), 
         new Date(2021, 2, 10), 
         new Date(2021, 2, 30), 
     ]

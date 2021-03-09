@@ -12,7 +12,7 @@ export const postPickup = (newPickup) => {
     return axios.post("/api/pickups", newPickup)
 }
 
-export const updateOrder = (pickupId, pickupUpdates) => {
+export const updatePickup = (pickupId, pickupUpdates) => {
     return axios.patch(`/api/pickups/${pickupId}`, pickupUpdates)
 }
 
