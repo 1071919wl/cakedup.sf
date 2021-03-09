@@ -7,9 +7,9 @@ const PickupsReducer = (state={}, action) =>  {
 
     switch (action.type) {
         case RECEIVE_PICKUPS:
-            return action.orders;
+            return action.pickups;
         case RECEIVE_PICKUP:
-            newState[action.order._id] = action.order
+            newState[action.pickup._id] = action.pickup
             return newState
         default:
             return state;

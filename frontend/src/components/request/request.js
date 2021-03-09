@@ -90,7 +90,6 @@ const Request = ({postOrder, errors, errors2, removeOrderErrors}) => {
             }else{
                 newArr.push(dup[i]);
             };
-
         }
         
         if( match === false){

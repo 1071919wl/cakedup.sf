@@ -4,9 +4,12 @@ const validText = require('./valid-text');
 module.exports = function validateOrderInput(data){
     let errors = {};
 
-    data.setDate = validText(data.setDate) ? data.setDate : '';
+    // data.setDate = validText(data.setDate) ? data.setDate : '';
+    // if(Validator.isEmpty(data.setDate)){
+    //     errors.setDate = 'Please provide available dates for pick up'
+    // }
 
-    if(Validator.isEmpty(data.setDate)){
+    if(data.setDate.length < 1){
         errors.setDate = 'Please provide available dates for pick up'
     }
 

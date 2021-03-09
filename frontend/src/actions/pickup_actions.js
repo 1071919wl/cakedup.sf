@@ -45,11 +45,14 @@ export const fetchPickups = () => dispatch => {
         .catch(err => dispatch(receivePickupErrors(err.response.data)))
 }
 
+//!ISSUES!!! THIS IS WHERE I LAST LEFT OFF. NEED TO FIGURE OUR WHY DATA IS RETURNING UNDEFINED
 export const postPickup = (newPickup) => dispatch => {
     return PickupsAPIUtil.postPickup(newPickup)
         .then(res => dispatch(receivePickup(res.data)))
+        // .then(res => console.log(res.data))
         .catch(err => dispatch(receivePickupErrors(err.response.data)))
 }
+//!ISSUES!!! THIS IS WHERE I LAST LEFT OFF. NEED TO FIGURE OUR WHY DATA IS RETURNING UNDEFINED
 
 export const updatePickup = (pickupId, pickupUpdates) => dispatch =>{
     return PickupsAPIUtil.updatePickup(pickupId, pickupUpdates)

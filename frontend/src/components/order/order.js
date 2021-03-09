@@ -4,6 +4,7 @@ import NavBarContainer from '../nav/navbar_container';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchOrders } from '../../actions/order_actions';
+import { postPickup } from '../../actions/pickup_actions';
 
 
 //!test
@@ -26,6 +27,14 @@ const Order = (props) => {
     const submitPickup = (e) => {
         e.preventDefault();
         console.log(selectedDay);
+
+        let newPickup = {
+            setDate: selectedDay.selectedDays
+        }
+
+        dispatch(postPickup(newPickup)).then(() => {
+            console.log('sent')
+        })
     }
 
     //!calendar

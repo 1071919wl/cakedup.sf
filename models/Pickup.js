@@ -6,10 +6,11 @@ const PickupSchema = new Schema({
     // month: { 
     //     type: String,
     //     required: true
-    // },
+    // },ç
     setDate:{
-        type: Date,
-        default: Date.now,
+        type: [Date],
+        // default: Date.now,
+        default: undefined,
         required: true
     }
 },    
